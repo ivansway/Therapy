@@ -3,19 +3,40 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41005CC72494FAA800164594 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41005CC62494FAA800164594 /* ScrollView.swift */; };
 		411BF61D2494E6F30012B1DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF61C2494E6F30012B1DB /* AppDelegate.swift */; };
 		411BF61F2494E6F30012B1DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF61E2494E6F30012B1DB /* SceneDelegate.swift */; };
-		411BF6212494E6F30012B1DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6202494E6F30012B1DB /* ViewController.swift */; };
 		411BF6242494E6F30012B1DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411BF6222494E6F30012B1DB /* Main.storyboard */; };
 		411BF6272494E6F30012B1DB /* Therapy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6252494E6F30012B1DB /* Therapy.xcdatamodeld */; };
 		411BF6292494E6F40012B1DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411BF6282494E6F40012B1DB /* Assets.xcassets */; };
 		411BF62C2494E6F40012B1DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411BF62A2494E6F40012B1DB /* LaunchScreen.storyboard */; };
 		411BF6372494E6F50012B1DB /* TherapyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6362494E6F50012B1DB /* TherapyTests.swift */; };
 		411BF6422494E6F50012B1DB /* TherapyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6412494E6F50012B1DB /* TherapyUITests.swift */; };
+		411BF6502494EA850012B1DB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF64F2494EA850012B1DB /* SignupViewController.swift */; };
+		4186266424951C7200C85A40 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266324951C7200C85A40 /* SignupViewModel.swift */; };
+		4186266624951D8600C85A40 /* MainBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266524951D8600C85A40 /* MainBaseManager.swift */; };
+		4186266824951FAE00C85A40 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266724951FAE00C85A40 /* UserIdentity.swift */; };
+		4186266A249530D500C85A40 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862669249530D400C85A40 /* Button.swift */; };
+		418626702495535600C85A40 /* SiginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266F2495535600C85A40 /* SiginViewController.swift */; };
+		41862672249554D300C85A40 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862671249554D300C85A40 /* LoginViewModel.swift */; };
+		418626742495559B00C85A40 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418626732495559B00C85A40 /* TextField.swift */; };
+		4186267A249558DD00C85A40 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862679249558DD00C85A40 /* GeneralViewController.swift */; };
+		4186267C249559EB00C85A40 /* GeneralInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186267B249559EB00C85A40 /* GeneralInterface.swift */; };
+		4186267E24955FA300C85A40 /* GeneralTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186267D24955FA300C85A40 /* GeneralTransition.swift */; };
+		418626802495617B00C85A40 /* LoginTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186267F2495617B00C85A40 /* LoginTransition.swift */; };
+		418626822496275900C85A40 /* RegistrationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418626812496275900C85A40 /* RegistrationTransition.swift */; };
+		41D51B64249638860096D21D /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B63249638860096D21D /* PresentationManager.swift */; };
+		41D51B66249638F40096D21D /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B65249638F40096D21D /* PresentationController.swift */; };
+		41D51B68249685450096D21D /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B67249685450096D21D /* DatePicker.swift */; };
+		41FBFC032494FEAD0016F8E0 /* SignupInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FBFC022494FEAD0016F8E0 /* SignupInterface.swift */; };
+		41FBFC072494FF800016F8E0 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FBFC062494FF7F0016F8E0 /* Constraints.swift */; };
+		B3E9DA326732240FDC262B5C /* Pods_Therapy_TherapyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6680F3FE06303CAEF0993EC /* Pods_Therapy_TherapyUITests.framework */; };
+		BDDB21E3D76E49B03A52F32E /* Pods_Therapy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61224806DC5B9B10913B2579 /* Pods_Therapy.framework */; };
+		C71A4A9233B717CD831D00A1 /* Pods_TherapyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A42B48A640A0C1B2EC0487F /* Pods_TherapyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41005CC62494FAA800164594 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		411BF6192494E6F30012B1DB /* Therapy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Therapy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		411BF61C2494E6F30012B1DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		411BF61E2494E6F30012B1DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		411BF6202494E6F30012B1DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		411BF6232494E6F30012B1DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		411BF6262494E6F30012B1DB /* Therapy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Therapy.xcdatamodel; sourceTree = "<group>"; };
 		411BF6282494E6F40012B1DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +72,33 @@
 		411BF63D2494E6F50012B1DB /* TherapyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TherapyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		411BF6412494E6F50012B1DB /* TherapyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyUITests.swift; sourceTree = "<group>"; };
 		411BF6432494E6F50012B1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		411BF64F2494EA850012B1DB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		4186266324951C7200C85A40 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		4186266524951D8600C85A40 /* MainBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBaseManager.swift; sourceTree = "<group>"; };
+		4186266724951FAE00C85A40 /* UserIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
+		41862669249530D400C85A40 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		4186266F2495535600C85A40 /* SiginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginViewController.swift; sourceTree = "<group>"; };
+		41862671249554D300C85A40 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		418626732495559B00C85A40 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		41862679249558DD00C85A40 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		4186267B249559EB00C85A40 /* GeneralInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInterface.swift; sourceTree = "<group>"; };
+		4186267D24955FA300C85A40 /* GeneralTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTransition.swift; sourceTree = "<group>"; };
+		4186267F2495617B00C85A40 /* LoginTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTransition.swift; sourceTree = "<group>"; };
+		418626812496275900C85A40 /* RegistrationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTransition.swift; sourceTree = "<group>"; };
+		41D51B63249638860096D21D /* PresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
+		41D51B65249638F40096D21D /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		41D51B67249685450096D21D /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		41FBFC022494FEAD0016F8E0 /* SignupInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInterface.swift; sourceTree = "<group>"; };
+		41FBFC062494FF7F0016F8E0 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		4A42B48A640A0C1B2EC0487F /* Pods_TherapyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TherapyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61224806DC5B9B10913B2579 /* Pods_Therapy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Therapy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8625FF4E81D3ABC204D9D572 /* Pods-Therapy-TherapyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapy-TherapyUITests.release.xcconfig"; path = "Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8B5EED82A9C4DCEDFCA2F831 /* Pods-TherapyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TherapyTests.debug.xcconfig"; path = "Target Support Files/Pods-TherapyTests/Pods-TherapyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A56D4AC6C0F32640D87586ED /* Pods-Therapy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapy.release.xcconfig"; path = "Target Support Files/Pods-Therapy/Pods-Therapy.release.xcconfig"; sourceTree = "<group>"; };
+		B392218E374690EC7E69AAE6 /* Pods-Therapy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapy.debug.xcconfig"; path = "Target Support Files/Pods-Therapy/Pods-Therapy.debug.xcconfig"; sourceTree = "<group>"; };
+		B9989923486D7E7F3D2CDCEC /* Pods-TherapyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TherapyTests.release.xcconfig"; path = "Target Support Files/Pods-TherapyTests/Pods-TherapyTests.release.xcconfig"; sourceTree = "<group>"; };
+		C13EC240BD1E6E94AD312C9D /* Pods-Therapy-TherapyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapy-TherapyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6680F3FE06303CAEF0993EC /* Pods_Therapy_TherapyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Therapy_TherapyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDB21E3D76E49B03A52F32E /* Pods_Therapy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71A4A9233B717CD831D00A1 /* Pods_TherapyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +122,73 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3E9DA326732240FDC262B5C /* Pods_Therapy_TherapyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		377018D8F8A04A3CA7A61528 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B392218E374690EC7E69AAE6 /* Pods-Therapy.debug.xcconfig */,
+				A56D4AC6C0F32640D87586ED /* Pods-Therapy.release.xcconfig */,
+				C13EC240BD1E6E94AD312C9D /* Pods-Therapy-TherapyUITests.debug.xcconfig */,
+				8625FF4E81D3ABC204D9D572 /* Pods-Therapy-TherapyUITests.release.xcconfig */,
+				8B5EED82A9C4DCEDFCA2F831 /* Pods-TherapyTests.debug.xcconfig */,
+				B9989923486D7E7F3D2CDCEC /* Pods-TherapyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		41005CC52494FA9300164594 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				41005CC62494FAA800164594 /* ScrollView.swift */,
+				41FBFC062494FF7F0016F8E0 /* Constraints.swift */,
+				4186266724951FAE00C85A40 /* UserIdentity.swift */,
+				41D51B67249685450096D21D /* DatePicker.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		41005CC92494FB5200164594 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				41005CCB2494FB6800164594 /* View */,
+				41005CCD2494FB7D00164594 /* ViewModel */,
+				41005CCC2494FB7300164594 /* Services */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		41005CCB2494FB6800164594 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				411BF64F2494EA850012B1DB /* SignupViewController.swift */,
+				41FBFC022494FEAD0016F8E0 /* SignupInterface.swift */,
+				418626812496275900C85A40 /* RegistrationTransition.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		41005CCC2494FB7300164594 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4186266524951D8600C85A40 /* MainBaseManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		41005CCD2494FB7D00164594 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4186266324951C7200C85A40 /* SignupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		411BF6102494E6F30012B1DB = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +196,8 @@
 				411BF6352494E6F50012B1DB /* TherapyTests */,
 				411BF6402494E6F50012B1DB /* TherapyUITests */,
 				411BF61A2494E6F30012B1DB /* Products */,
+				377018D8F8A04A3CA7A61528 /* Pods */,
+				84CC71C4A339B0ED610E3F2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,9 +214,15 @@
 		411BF61B2494E6F30012B1DB /* Therapy */ = {
 			isa = PBXGroup;
 			children = (
+				41005CC52494FA9300164594 /* Global */,
+				41D51B62249638480096D21D /* Presentation */,
 				411BF61C2494E6F30012B1DB /* AppDelegate.swift */,
 				411BF61E2494E6F30012B1DB /* SceneDelegate.swift */,
-				411BF6202494E6F30012B1DB /* ViewController.swift */,
+				41862669249530D400C85A40 /* Button.swift */,
+				418626732495559B00C85A40 /* TextField.swift */,
+				41862675249558A400C85A40 /* General */,
+				41005CC92494FB5200164594 /* Signup */,
+				4186266B2495530D00C85A40 /* Sigin */,
 				411BF6222494E6F30012B1DB /* Main.storyboard */,
 				411BF6282494E6F40012B1DB /* Assets.xcassets */,
 				411BF62A2494E6F40012B1DB /* LaunchScreen.storyboard */,
@@ -131,6 +250,93 @@
 			path = TherapyUITests;
 			sourceTree = "<group>";
 		};
+		4186266B2495530D00C85A40 /* Sigin */ = {
+			isa = PBXGroup;
+			children = (
+				4186266E2495532500C85A40 /* View */,
+				4186266D2495532200C85A40 /* ViewModel */,
+				4186266C2495531F00C85A40 /* Services */,
+			);
+			path = Sigin;
+			sourceTree = "<group>";
+		};
+		4186266C2495531F00C85A40 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4186266D2495532200C85A40 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				41862671249554D300C85A40 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4186266E2495532500C85A40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4186266F2495535600C85A40 /* SiginViewController.swift */,
+				4186267F2495617B00C85A40 /* LoginTransition.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		41862675249558A400C85A40 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				41862678249558B700C85A40 /* View */,
+				41862677249558B500C85A40 /* ViewModel */,
+				41862676249558B100C85A40 /* Services */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		41862676249558B100C85A40 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		41862677249558B500C85A40 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		41862678249558B700C85A40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				41862679249558DD00C85A40 /* GeneralViewController.swift */,
+				4186267B249559EB00C85A40 /* GeneralInterface.swift */,
+				4186267D24955FA300C85A40 /* GeneralTransition.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		41D51B62249638480096D21D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				41D51B63249638860096D21D /* PresentationManager.swift */,
+				41D51B65249638F40096D21D /* PresentationController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		84CC71C4A339B0ED610E3F2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61224806DC5B9B10913B2579 /* Pods_Therapy.framework */,
+				C6680F3FE06303CAEF0993EC /* Pods_Therapy_TherapyUITests.framework */,
+				4A42B48A640A0C1B2EC0487F /* Pods_TherapyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +344,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 411BF6462494E6F50012B1DB /* Build configuration list for PBXNativeTarget "Therapy" */;
 			buildPhases = (
+				B5A3E68617CF5DF6FA6E4C3F /* [CP] Check Pods Manifest.lock */,
 				411BF6152494E6F30012B1DB /* Sources */,
 				411BF6162494E6F30012B1DB /* Frameworks */,
 				411BF6172494E6F30012B1DB /* Resources */,
+				AA8FB8DAC450B92F35DACAA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +363,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 411BF6492494E6F50012B1DB /* Build configuration list for PBXNativeTarget "TherapyTests" */;
 			buildPhases = (
+				D95D8EA55CD3F015D39CD066 /* [CP] Check Pods Manifest.lock */,
 				411BF62E2494E6F50012B1DB /* Sources */,
 				411BF62F2494E6F50012B1DB /* Frameworks */,
 				411BF6302494E6F50012B1DB /* Resources */,
@@ -173,9 +382,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 411BF64C2494E6F50012B1DB /* Build configuration list for PBXNativeTarget "TherapyUITests" */;
 			buildPhases = (
+				B105BF5881976745A3FEA722 /* [CP] Check Pods Manifest.lock */,
 				411BF6392494E6F50012B1DB /* Sources */,
 				411BF63A2494E6F50012B1DB /* Frameworks */,
 				411BF63B2494E6F50012B1DB /* Resources */,
+				6271BA5CC51465D6B7035CC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,15 +468,136 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6271BA5CC51465D6B7035CC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA8FB8DAC450B92F35DACAA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapy/Pods-Therapy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapy/Pods-Therapy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Therapy/Pods-Therapy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B105BF5881976745A3FEA722 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Therapy-TherapyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5A3E68617CF5DF6FA6E4C3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Therapy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D95D8EA55CD3F015D39CD066 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TherapyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		411BF6152494E6F30012B1DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				411BF6212494E6F30012B1DB /* ViewController.swift in Sources */,
+				418626802495617B00C85A40 /* LoginTransition.swift in Sources */,
+				4186267C249559EB00C85A40 /* GeneralInterface.swift in Sources */,
+				41D51B66249638F40096D21D /* PresentationController.swift in Sources */,
+				418626702495535600C85A40 /* SiginViewController.swift in Sources */,
+				41D51B64249638860096D21D /* PresentationManager.swift in Sources */,
 				411BF6272494E6F30012B1DB /* Therapy.xcdatamodeld in Sources */,
+				418626822496275900C85A40 /* RegistrationTransition.swift in Sources */,
+				41D51B68249685450096D21D /* DatePicker.swift in Sources */,
+				41FBFC072494FF800016F8E0 /* Constraints.swift in Sources */,
+				418626742495559B00C85A40 /* TextField.swift in Sources */,
+				4186266624951D8600C85A40 /* MainBaseManager.swift in Sources */,
+				4186266824951FAE00C85A40 /* UserIdentity.swift in Sources */,
+				411BF6502494EA850012B1DB /* SignupViewController.swift in Sources */,
 				411BF61D2494E6F30012B1DB /* AppDelegate.swift in Sources */,
+				41005CC72494FAA800164594 /* ScrollView.swift in Sources */,
+				41862672249554D300C85A40 /* LoginViewModel.swift in Sources */,
+				41FBFC032494FEAD0016F8E0 /* SignupInterface.swift in Sources */,
 				411BF61F2494E6F30012B1DB /* SceneDelegate.swift in Sources */,
+				4186267A249558DD00C85A40 /* GeneralViewController.swift in Sources */,
+				4186267E24955FA300C85A40 /* GeneralTransition.swift in Sources */,
+				4186266424951C7200C85A40 /* SignupViewModel.swift in Sources */,
+				4186266A249530D500C85A40 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +768,7 @@
 		};
 		411BF6472494E6F50012B1DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B392218E374690EC7E69AAE6 /* Pods-Therapy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +787,7 @@
 		};
 		411BF6482494E6F50012B1DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A56D4AC6C0F32640D87586ED /* Pods-Therapy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -472,6 +806,7 @@
 		};
 		411BF64A2494E6F50012B1DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B5EED82A9C4DCEDFCA2F831 /* Pods-TherapyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +829,7 @@
 		};
 		411BF64B2494E6F50012B1DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9989923486D7E7F3D2CDCEC /* Pods-TherapyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +852,7 @@
 		};
 		411BF64D2494E6F50012B1DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C13EC240BD1E6E94AD312C9D /* Pods-Therapy-TherapyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +873,7 @@
 		};
 		411BF64E2494E6F50012B1DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8625FF4E81D3ABC204D9D572 /* Pods-Therapy-TherapyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
