@@ -7,7 +7,7 @@ target 'Therapy' do
 
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
-
+    pod 'GoogleMaps'
   target 'TherapyTests' do
     inherit! :search_paths
     # Pods for testing

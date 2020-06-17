@@ -15,7 +15,7 @@ class SignupViewController: UIViewController {
     // INSTANCE
     let interface = SignupInterface()
     let signupVM = SignupViewModel()
-    let disposeBag = DisposeBag()
+    let bag = DisposeBag()
     
     var userImage = UIImage()
     
@@ -75,11 +75,23 @@ class SignupViewController: UIViewController {
     // FETCH
     func fetch() {
         
-        let userData = signupVM.fetch()
+        // OBSERVABLE FETCH
+        self.signupVM.fetch()
         
-        self.interface.nameTF.text = userData["name"] as? String
-        self.interface.surnameTF.text = userData["surname"] as? String
-        self.mainImage(superView: scrollView, image: userData["image"] as? UIImage)
+        Observable.from(self.signupVM.launchData).subscribe({(launchInfo) in
+            
+            switch launchInfo.element?.key {
+            case "name":
+                self.interface.nameTF.text = launchInfo.element?.value as? String
+            case "surname":
+                self.interface.surnameTF.text = launchInfo.element?.value as? String
+            case "image":
+                self.mainImage(superView: self.scrollView, image: launchInfo.element?.value as? UIImage)
+            default:
+                print("")
+            }
+        })
+    .disposed(by: bag)
     }
     
     // CLOSE BUTTON
@@ -139,26 +151,23 @@ class SignupViewController: UIViewController {
         photoButton.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
+    
     // VERIFICATION
     func verification() {
        
-        self.interface.nameTF.rx.text.map { $0 ?? "" }.bind(to: signupVM.nameText).disposed(by: disposeBag)
-        self.interface.surnameTF.rx.text.map { $0 ?? "" }.bind(to: signupVM.surnameText).disposed(by: disposeBag)
+        self.interface.nameTF.rx.text.map { $0 ?? "" }.bind(to: signupVM.nameText).disposed(by: bag)
+        self.interface.surnameTF.rx.text.map { $0 ?? "" }.bind(to: signupVM.surnameText).disposed(by: bag)
         
-        signupVM.notEmpty().bind(to: interface.saveButton.rx.isEnabled).disposed(by: disposeBag)
-        signupVM.notEmpty().map { $0 ? 1 : 0.4 }.bind(to: interface.saveButton.rx.alpha).disposed(by: disposeBag)
+        signupVM.notEmpty().bind(to: interface.saveButton.rx.isEnabled).disposed(by: bag)
+        signupVM.notEmpty().map { $0 ? 1 : 0.4 }.bind(to: interface.saveButton.rx.alpha).disposed(by: bag)
         
-        
+//        signupVM.notEmpty().bind(onNext: { _ in self.save() }).disposed(by: bag)
     }
     
     // SAVE
     @objc func save() {
-        
-    
-        if self.interface.nameTF.text != "" && self.interface.surnameTF.text != "" {
-            self.interface.save(image: userImage)
-            self.pop()
-        }
+        self.interface.save(image: userImage)
+        pop()
     }
 }
 

@@ -18,7 +18,7 @@
 		411BF6422494E6F50012B1DB /* TherapyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6412494E6F50012B1DB /* TherapyUITests.swift */; };
 		411BF6502494EA850012B1DB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF64F2494EA850012B1DB /* SignupViewController.swift */; };
 		4186266424951C7200C85A40 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266324951C7200C85A40 /* SignupViewModel.swift */; };
-		4186266624951D8600C85A40 /* MainBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266524951D8600C85A40 /* MainBaseManager.swift */; };
+		4186266624951D8600C85A40 /* SignupBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266524951D8600C85A40 /* SignupBaseManager.swift */; };
 		4186266824951FAE00C85A40 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266724951FAE00C85A40 /* UserIdentity.swift */; };
 		4186266A249530D500C85A40 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862669249530D400C85A40 /* Button.swift */; };
 		418626702495535600C85A40 /* SiginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266F2495535600C85A40 /* SiginViewController.swift */; };
@@ -29,9 +29,15 @@
 		4186267E24955FA300C85A40 /* GeneralTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186267D24955FA300C85A40 /* GeneralTransition.swift */; };
 		418626802495617B00C85A40 /* LoginTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186267F2495617B00C85A40 /* LoginTransition.swift */; };
 		418626822496275900C85A40 /* RegistrationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418626812496275900C85A40 /* RegistrationTransition.swift */; };
+		41AC4A9C249948A200DDECE5 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC4A9B249948A200DDECE5 /* LocationsViewController.swift */; };
+		41AC4A9E24994A7300DDECE5 /* LocationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC4A9D24994A7300DDECE5 /* LocationInterface.swift */; };
+		41AC4AA024994F2300DDECE5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC4A9F24994F2300DDECE5 /* Place.swift */; };
 		41D51B64249638860096D21D /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B63249638860096D21D /* PresentationManager.swift */; };
 		41D51B66249638F40096D21D /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B65249638F40096D21D /* PresentationController.swift */; };
 		41D51B68249685450096D21D /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B67249685450096D21D /* DatePicker.swift */; };
+		41F88E7A249A1A0600FEC000 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F88E79249A1A0600FEC000 /* Picker.swift */; };
+		41F88E7C249A9FC000FEC000 /* addButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F88E7B249A9FC000FEC000 /* addButton.swift */; };
+		41F88E7E249AC9BC00FEC000 /* LocationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F88E7D249AC9BC00FEC000 /* LocationTransition.swift */; };
 		41FBFC032494FEAD0016F8E0 /* SignupInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FBFC022494FEAD0016F8E0 /* SignupInterface.swift */; };
 		41FBFC072494FF800016F8E0 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FBFC062494FF7F0016F8E0 /* Constraints.swift */; };
 		B3E9DA326732240FDC262B5C /* Pods_Therapy_TherapyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6680F3FE06303CAEF0993EC /* Pods_Therapy_TherapyUITests.framework */; };
@@ -74,7 +80,7 @@
 		411BF6432494E6F50012B1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		411BF64F2494EA850012B1DB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		4186266324951C7200C85A40 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
-		4186266524951D8600C85A40 /* MainBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBaseManager.swift; sourceTree = "<group>"; };
+		4186266524951D8600C85A40 /* SignupBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupBaseManager.swift; sourceTree = "<group>"; };
 		4186266724951FAE00C85A40 /* UserIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
 		41862669249530D400C85A40 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		4186266F2495535600C85A40 /* SiginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginViewController.swift; sourceTree = "<group>"; };
@@ -85,9 +91,15 @@
 		4186267D24955FA300C85A40 /* GeneralTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTransition.swift; sourceTree = "<group>"; };
 		4186267F2495617B00C85A40 /* LoginTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTransition.swift; sourceTree = "<group>"; };
 		418626812496275900C85A40 /* RegistrationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTransition.swift; sourceTree = "<group>"; };
+		41AC4A9B249948A200DDECE5 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		41AC4A9D24994A7300DDECE5 /* LocationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInterface.swift; sourceTree = "<group>"; };
+		41AC4A9F24994F2300DDECE5 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		41D51B63249638860096D21D /* PresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
 		41D51B65249638F40096D21D /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		41D51B67249685450096D21D /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		41F88E79249A1A0600FEC000 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		41F88E7B249A9FC000FEC000 /* addButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addButton.swift; sourceTree = "<group>"; };
+		41F88E7D249AC9BC00FEC000 /* LocationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTransition.swift; sourceTree = "<group>"; };
 		41FBFC022494FEAD0016F8E0 /* SignupInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInterface.swift; sourceTree = "<group>"; };
 		41FBFC062494FF7F0016F8E0 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		4A42B48A640A0C1B2EC0487F /* Pods_TherapyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TherapyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +161,8 @@
 				41FBFC062494FF7F0016F8E0 /* Constraints.swift */,
 				4186266724951FAE00C85A40 /* UserIdentity.swift */,
 				41D51B67249685450096D21D /* DatePicker.swift */,
+				41F88E79249A1A0600FEC000 /* Picker.swift */,
+				41F88E7B249A9FC000FEC000 /* addButton.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -176,7 +190,7 @@
 		41005CCC2494FB7300164594 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4186266524951D8600C85A40 /* MainBaseManager.swift */,
+				4186266524951D8600C85A40 /* SignupBaseManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -223,6 +237,7 @@
 				41862675249558A400C85A40 /* General */,
 				41005CC92494FB5200164594 /* Signup */,
 				4186266B2495530D00C85A40 /* Sigin */,
+				41AC4A972499486500DDECE5 /* Location */,
 				411BF6222494E6F30012B1DB /* Main.storyboard */,
 				411BF6282494E6F40012B1DB /* Assets.xcassets */,
 				411BF62A2494E6F40012B1DB /* LaunchScreen.storyboard */,
@@ -318,6 +333,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		41AC4A972499486500DDECE5 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				41AC4A9A2499487300DDECE5 /* View */,
+				41AC4A992499486F00DDECE5 /* ViewModel */,
+				41AC4A982499486B00DDECE5 /* Services */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		41AC4A982499486B00DDECE5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		41AC4A992499486F00DDECE5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		41AC4A9A2499487300DDECE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				41AC4A9B249948A200DDECE5 /* LocationsViewController.swift */,
+				41AC4A9D24994A7300DDECE5 /* LocationInterface.swift */,
+				41AC4A9F24994F2300DDECE5 /* Place.swift */,
+				41F88E7D249AC9BC00FEC000 /* LocationTransition.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		41D51B62249638480096D21D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +399,7 @@
 				411BF6162494E6F30012B1DB /* Frameworks */,
 				411BF6172494E6F30012B1DB /* Resources */,
 				AA8FB8DAC450B92F35DACAA0 /* [CP] Embed Pods Frameworks */,
+				7226C2DEDCBE63C6BA2C31FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -387,6 +438,7 @@
 				411BF63A2494E6F50012B1DB /* Frameworks */,
 				411BF63B2494E6F50012B1DB /* Resources */,
 				6271BA5CC51465D6B7035CC4 /* [CP] Embed Pods Frameworks */,
+				EE9C0E8715F424C4207E4D3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -486,6 +538,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7226C2DEDCBE63C6BA2C31FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapy/Pods-Therapy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapy/Pods-Therapy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Therapy/Pods-Therapy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AA8FB8DAC450B92F35DACAA0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -569,6 +638,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE9C0E8715F424C4207E4D3E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Therapy-TherapyUITests/Pods-Therapy-TherapyUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -580,22 +666,28 @@
 				4186267C249559EB00C85A40 /* GeneralInterface.swift in Sources */,
 				41D51B66249638F40096D21D /* PresentationController.swift in Sources */,
 				418626702495535600C85A40 /* SiginViewController.swift in Sources */,
+				41AC4A9E24994A7300DDECE5 /* LocationInterface.swift in Sources */,
 				41D51B64249638860096D21D /* PresentationManager.swift in Sources */,
 				411BF6272494E6F30012B1DB /* Therapy.xcdatamodeld in Sources */,
 				418626822496275900C85A40 /* RegistrationTransition.swift in Sources */,
 				41D51B68249685450096D21D /* DatePicker.swift in Sources */,
+				41F88E7A249A1A0600FEC000 /* Picker.swift in Sources */,
 				41FBFC072494FF800016F8E0 /* Constraints.swift in Sources */,
 				418626742495559B00C85A40 /* TextField.swift in Sources */,
-				4186266624951D8600C85A40 /* MainBaseManager.swift in Sources */,
+				4186266624951D8600C85A40 /* SignupBaseManager.swift in Sources */,
+				41AC4AA024994F2300DDECE5 /* Place.swift in Sources */,
 				4186266824951FAE00C85A40 /* UserIdentity.swift in Sources */,
 				411BF6502494EA850012B1DB /* SignupViewController.swift in Sources */,
 				411BF61D2494E6F30012B1DB /* AppDelegate.swift in Sources */,
+				41AC4A9C249948A200DDECE5 /* LocationsViewController.swift in Sources */,
 				41005CC72494FAA800164594 /* ScrollView.swift in Sources */,
 				41862672249554D300C85A40 /* LoginViewModel.swift in Sources */,
 				41FBFC032494FEAD0016F8E0 /* SignupInterface.swift in Sources */,
 				411BF61F2494E6F30012B1DB /* SceneDelegate.swift in Sources */,
 				4186267A249558DD00C85A40 /* GeneralViewController.swift in Sources */,
+				41F88E7E249AC9BC00FEC000 /* LocationTransition.swift in Sources */,
 				4186267E24955FA300C85A40 /* GeneralTransition.swift in Sources */,
+				41F88E7C249A9FC000FEC000 /* addButton.swift in Sources */,
 				4186266424951C7200C85A40 /* SignupViewModel.swift in Sources */,
 				4186266A249530D500C85A40 /* Button.swift in Sources */,
 			);

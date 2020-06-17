@@ -55,6 +55,22 @@
             </objects>
             <point key="canvasLocation" x="-888" y="902"/>
         </scene>
+        <!--Locations View Controller-->
+        <scene sceneID="XU3-pe-xUw">
+            <objects>
+                <viewController storyboardIdentifier="LocationsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KkY-U9-ONg" customClass="LocationsViewController" customModule="Therapy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZXD-hl-uWU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Toy-cO-ISI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Idj-ZD-faH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GlW-t5-sDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285" y="894"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="59f-GG-ZZM">
             <objects>
@@ -69,6 +85,7 @@
                         <segue destination="082-LW-k8k" kind="relationship" relationship="rootViewController" id="wod-dX-Chw"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SignupViewController" id="ibD-6i-cQD"/>
                         <segue destination="alv-ak-BJY" kind="show" identifier="SiginViewController" id="0al-Ua-yFR"/>
+                        <segue destination="KkY-U9-ONg" kind="show" identifier="LocationsViewController" id="fir-df-gxH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xe5-XB-AZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

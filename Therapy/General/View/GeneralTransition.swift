@@ -30,5 +30,13 @@ extension GeneralViewController {
         
         self.navigationController?.pushViewController(signinVC, animated: true)
     }
+    
 
+    // PUSH LOCATION VC
+    @objc func pushlocationsVC() {
+        
+        let locationsVC = self.storyboard?.instantiateViewController(withIdentifier: "LocationsViewController") as! LocationsViewController
+        
+        self.navigationController?.pushViewController(locationsVC, animated: true)
+    }
 }

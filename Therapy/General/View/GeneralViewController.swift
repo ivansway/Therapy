@@ -53,6 +53,9 @@ class GeneralViewController: UIViewController {
         
         // SIGN UP BUTTON
         self.signup()
+        
+        // ADD PLACE
+        self.addPlace()
     }
     
     // SIGN IN
@@ -76,4 +79,17 @@ class GeneralViewController: UIViewController {
         button.addTarget(self, action: #selector(pushSignupVC), for: .touchUpInside)
         Constraints.widthHeightTrailingTop(superView: self.scrollView, view: button, widthAnchor: 80, heightAnchor: 20, trailingAnchor: -16, topAnchor: 65)
     }
+    
+    // ADD PLACE
+    func addPlace() {
+        
+        let button = UIButton()
+        button.setTitle("add place", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Copperplate", size: 20)
+        button.setTitleColor(UIColor(red: 0.121, green: 0.3, blue: 0.1, alpha: 1), for: .normal)
+        button.addTarget(self, action: #selector(pushlocationsVC), for: .touchUpInside)
+        Constraints.widthHeightTrailingTop(superView: self.scrollView, view: button, widthAnchor: 100, heightAnchor: 20, trailingAnchor: -16, topAnchor: 90)
+    }
+    
+    
 }

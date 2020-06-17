@@ -9,8 +9,13 @@
 import Foundation
 import CoreData
 import UIKit
+import RxSwift
+import RxCocoa
 
-class MainBaseManager {
+class SignupBaseManager {
+    
+    // SIGN UP DB
+    var signupDB: [Main] = []
     
     // APP DELEGATE
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -41,7 +46,7 @@ class MainBaseManager {
         }
     }
     
-    // SAVE PASSWORD
+    // SAVE
     func save(identifier: String, name: String, surname: String, image: Data) {
         
         let context = appDelegate.persistentContainer.viewContext
@@ -62,23 +67,21 @@ class MainBaseManager {
         }
     }
     
-    // FETCH PASSWORD
-    func fetch(identifier: String) -> [Main] {
+    // FETCH
+    func fetch() {
 
-        var mainDB: [Main] = []
-        
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Main> = Main.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "identifier == %@", identifier)
+           let context = appDelegate.persistentContainer.viewContext
+           let fetchRequest: NSFetchRequest<Main> = Main.fetchRequest()
+           fetchRequest.predicate = NSPredicate(format: "identifier == %@", UserIdentity.identifier)
 
-        do {
-            let request = try context.fetch(fetchRequest) as [Main]
-            
-            mainDB = request
+           do {
+               let request = try context.fetch(fetchRequest) as [Main]
 
-        } catch {
-            print(error.localizedDescription)
-        }
-        return mainDB
-    }
+
+                self.signupDB = request
+
+           } catch {
+               print(error.localizedDescription)
+           }
+       }
 }

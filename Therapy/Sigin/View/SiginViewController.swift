@@ -14,7 +14,7 @@ class SiginViewController: UIViewController {
 
     // INSTANCE
     private var loginVM = LoginViewModel()
-    let disposeBag = DisposeBag()
+    let bag = DisposeBag()
     
     // TF
     let userNameTF = UITextField()
@@ -108,10 +108,10 @@ class SiginViewController: UIViewController {
         
         userNameTF.becomeFirstResponder()
         
-        userNameTF.rx.text.map { $0 ?? "" }.bind(to: loginVM.usernameText).disposed(by: disposeBag)
-        passwordTF.rx.text.map { $0 ?? "" }.bind(to: loginVM.passwordText).disposed(by: disposeBag)
+        userNameTF.rx.text.map { $0 ?? "" }.bind(to: loginVM.usernameText).disposed(by: bag)
+        passwordTF.rx.text.map { $0 ?? "" }.bind(to: loginVM.passwordText).disposed(by: bag)
         
-        loginVM.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
-        loginVM.isValid().map { $0 ? 1 : 0.4 }.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)
+        loginVM.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: bag)
+        loginVM.isValid().map { $0 ? 1 : 0.4 }.bind(to: loginButton.rx.alpha).disposed(by: bag)
     }
 }
