@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
+class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
 //    weak var delegate: PickerDelegate?
     
@@ -37,6 +37,7 @@ class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
         self.picker.dataSource = self
         
         // TF
+        textField.delegate = self
         textField.text = "Choose option"
         textField.textAlignment = .right
         textField.font = UIFont(name: "Optima", size: 18)
@@ -92,6 +93,11 @@ class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.pickedNumber = String(array[row])
+    }
+    
+    // TF DELEGATE
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
     }
     
     

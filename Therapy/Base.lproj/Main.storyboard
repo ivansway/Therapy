@@ -71,6 +71,22 @@
             </objects>
             <point key="canvasLocation" x="285" y="894"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="UrZ-ap-5eP">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qUx-vk-xVy" customClass="MapViewController" customModule="Therapy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WSS-fm-tA4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Xb6-XJ-otz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0FI-sm-SUU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egi-ZW-faB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376" y="890"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="59f-GG-ZZM">
             <objects>
@@ -86,6 +102,7 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SignupViewController" id="ibD-6i-cQD"/>
                         <segue destination="alv-ak-BJY" kind="show" identifier="SiginViewController" id="0al-Ua-yFR"/>
                         <segue destination="KkY-U9-ONg" kind="show" identifier="LocationsViewController" id="fir-df-gxH"/>
+                        <segue destination="qUx-vk-xVy" kind="show" identifier="MapViewController" id="L8H-Ic-yx0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xe5-XB-AZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

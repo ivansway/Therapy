@@ -49,10 +49,12 @@ class LocationsViewController: UIViewController {
         self.close()
         
         // INTERFACE INIT
-        self.interface = LocationInterface(superView: self.scrollView)
+        self.interface = LocationInterface(superView: self.scrollView, navController: self.navigationController ?? UINavigationController(), viewController: self)
         
         //
         self.interface.addButton(superView: self.scrollView)
+        
+        
         
     }
     

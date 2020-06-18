@@ -10,28 +10,44 @@ import UIKit
 
 class Place {
     
+    // PICKER
+    var parkAbility: Picker!
+    var gasStattion: Picker!
+    
     // INSTANCE
-    var picker: Picker!
     var addButton: AddButton!
+    
     
     // BUTTON
     let saveButton = UIButton()
     
     // TF
     let parkingTF = UITextField()
+    let gasStationTF = UITextField()
+    
+    // CHECK BOX
+    let electroBox = UIButton()
+    let waterBox = UIButton()
     
     // BACK
     let back = UIView()
+    var navController: UINavigationController
+    var viewController: UIViewController
     var superView: UIView
     var top: CGFloat
     var waterSwitch: UISwitch
     var electroSwitch: UISwitch
     
-    init(superView: UIView, top: CGFloat, waterSwitch: UISwitch, electroSwitch: UISwitch) {
+    // INIT
+    init(superView: UIView, top: CGFloat, waterSwitch: UISwitch, electroSwitch: UISwitch,
+         navController: UINavigationController, viewController: UIViewController) {
+        
         self.superView = superView
         self.top = top
         self.waterSwitch = waterSwitch
         self.electroSwitch = electroSwitch
+        self.navController = navController
+        self.viewController = viewController
         setup()
     }
     
@@ -39,10 +55,10 @@ class Place {
     func setup() {
         
         // BACK
-        self.back(height: 400)
+        self.back(height: 450)
         
         // DESCRIPTION
-        self.description(top: 210)
+        self.description(top: 260)
         
         // LINE SEPARATOR
         self.lineSeparator(top: 0)
@@ -56,26 +72,42 @@ class Place {
         // LINE SEPARATOR
         self.lineSeparator(top: 150)
         
-        // PARKING ABILITY
-        self.parkingTitle(text: "Parking ability", top: 16)
+        // LINE SEPARATOR
+        self.lineSeparator(top: 250)
         
-        // ELECTRICITY
-        self.parkingTitle(text: "Electricity", top: 65)
+        // TITLES
         
-        // WATER
-        self.parkingTitle(text: "Water", top: 115)
+            // PARKING ABILITY
+            self.title(text: "Parking ability", top: 16)
+        
+            // ELECTRICITY
+            self.title(text: "Electricity", top: 65)
+        
+            // WATER
+            self.title(text: "Water", top: 115)
+        
+            // GAS STATION
+            self.title(text: "Gas station", top: 165)
+        
+            // GAS LOCATION
+            self.title(text: "Location", top: 215)
+            
+            // MAP
+            self.map(top: 215)
         
         // PARKING PICKER
-        self.parkingPicker()
+        self.picker()
         
         // SAVE
         self.save()
+
         
-        // ELECTRO SWITCH
-        self.theSwitch(theSwitch: electroSwitch, top: 60)
+        // CHECK BOX
+        self.checkBox(top: 63, checkBox: electroBox)
         
-        // WATER SWITCH
-        self.theSwitch(theSwitch: waterSwitch, top: 110)
+        // CHECK BOX
+        self.checkBox(top: 113, checkBox: waterBox)
+        
     }
     
     // BACK
@@ -109,7 +141,7 @@ class Place {
     }
     
     // PARKING TITLE
-    func parkingTitle(text: String, top: CGFloat) {
+    func title(text: String, top: CGFloat) {
         
         let label = UILabel()
         label.text = text
@@ -118,9 +150,21 @@ class Place {
         
     }
     
-    // PARKING PICKER
-    func parkingPicker() {
-        self.picker = Picker(superView: back, textField: parkingTF, array: ["", "Car", "Truck"], top: 16)
+    // PICKER
+    func picker() {
+        
+        // DISTANCE ARRAY
+        let distance = Array(0...99)
+        var stringDistance: [String] = []
+        for item in distance {
+            stringDistance.append("\(item)" + " km")
+        }
+        
+        // PARK ABILITY
+        self.parkAbility = Picker(superView: back, textField: parkingTF, array: ["", "Car", "Truck"], top: 16)
+        
+        // GAS STATION
+        self.gasStattion = Picker(superView: back, textField: gasStationTF, array: stringDistance, top: 165)
     }
     
     // SAVE BUTTON
@@ -128,9 +172,44 @@ class Place {
         self.addButton = AddButton(superView: back, button: saveButton, top: 322, text: "Save", backColor: UIColor(red: 0.184, green: 0.352, blue: 0.215, alpha: 1), textColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1))
     }
     
+    // DEPRECATED
     // THE SWITCH
-    func theSwitch(theSwitch: UISwitch, top: CGFloat) {
-        theSwitch.onTintColor = UIColor(red: 0.184, green: 0.352, blue: 0.215, alpha: 1)
-        Constraints.widthHeightTrailingTop(superView: back, view: theSwitch, widthAnchor: 46, heightAnchor: 36, trailingAnchor: -16, topAnchor: top)
+//    func theSwitch(theSwitch: UISwitch, top: CGFloat) {
+//        theSwitch.onTintColor = UIColor(red: 0.184, green: 0.352, blue: 0.215, alpha: 1)
+//        Constraints.widthHeightTrailingTop(superView: back, view: theSwitch, widthAnchor: 46, heightAnchor: 36, trailingAnchor: -16, topAnchor: top)
+//    }
+    
+    // CHECK BOX
+    func checkBox(top: CGFloat, checkBox: UIButton) {
+        
+        guard let image = UIImage(named: "check_box") else { return }
+        checkBox.setImage(image, for: .normal)
+        checkBox.alpha = 0.6
+        checkBox.addTarget(self, action: #selector(checkMark(sender:)), for: .touchUpInside)
+        Constraints.widthHeightTrailingTop(superView: back, view: checkBox, widthAnchor: 24, heightAnchor: 24, trailingAnchor: -16, topAnchor: top)
+        
+    }
+    
+    // CHECK MARK
+    @objc func checkMark(sender: UIButton) {
+        let checkMark = UIImageView()
+        guard let image = UIImage(named: "checkMark") else { return }
+        checkMark.image = image
+        Constraints.widthHeightTrailingTop(superView: sender, view: checkMark, widthAnchor: 15, heightAnchor: 15, trailingAnchor: -4, topAnchor: 4)
+    }
+    
+    // MAP
+    func map(top: CGFloat) {
+        let map = UIButton()
+        guard let image = UIImage(named: "map_icon") else { return }
+        map.setImage(image, for: .normal)
+        map.addTarget(self, action: #selector(openMap), for: .touchUpInside)
+        Constraints.widthHeightTrailingTop(superView: back, view: map, widthAnchor: 27, heightAnchor: 27, trailingAnchor: -16, topAnchor: top)
+    }
+    
+    @objc func openMap() {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let mapVC = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        self.viewController.present(mapVC, animated: true)
     }
 }

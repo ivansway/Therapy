@@ -14,18 +14,24 @@ class LocationInterface {
     var place: Place!
     
     // MEMBERS
-    var superView: UIView
     var dictPlace = [String: Place]()
     var placeIncrement: CGFloat = 80
     var placeName = 0
+
     
     // SWITCH
     let waterSwitch = UISwitch()
     let electroSwitch = UISwitch()
     
+    var superView: UIView
+    var navController: UINavigationController
+    var viewController: UIViewController
+    
     // INIT
-    init(superView: UIView) {
+    init(superView: UIView, navController: UINavigationController, viewController: UIViewController) {
         self.superView = superView
+        self.navController = navController
+        self.viewController = viewController
     }
     
     // ADD BUTTON
@@ -43,7 +49,7 @@ class LocationInterface {
     
     // ADD PLACE
     @objc func addPlace() {
-        self.dictPlace["\(placeName)"] = Place(superView: superView, top: placeIncrement, waterSwitch: waterSwitch, electroSwitch: electroSwitch)
+        self.dictPlace["\(placeName)"] = Place(superView: superView, top: placeIncrement, waterSwitch: waterSwitch, electroSwitch: electroSwitch, navController: navController, viewController: self.viewController)
         self.placeIncrement += 410
         self.placeName += 1
     }
