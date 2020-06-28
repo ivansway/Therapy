@@ -1,0 +1,30 @@
+PODS:
+  - FlexiblePageControl (1.0.8)
+  - Kingfisher (5.7.1)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
+  - YouTubePlayer (0.4.0)
+
+DEPENDENCIES:
+  - FlexiblePageControl
+  - Kingfisher (~> 5.0)
+  - NVActivityIndicatorView
+  - YouTubePlayer
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FlexiblePageControl
+    - Kingfisher
+    - NVActivityIndicatorView
+    - YouTubePlayer
+
+SPEC CHECKSUMS:
+  FlexiblePageControl: 07f7765054f16b3f0bc3f14dfd95ab5f45817ea4
+  Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
+
+PODFILE CHECKSUM: f1d6e06696fb42119fefdbf8e66c915823eac5be
+
+COCOAPODS: 1.5.3
