@@ -10,7 +10,7 @@ import UIKit
 
 extension SignupViewController {
    
-    @objc func pop() {
+    @objc func popVC() {
         self.navigationController?.popViewController(animated: true)
     }
 }

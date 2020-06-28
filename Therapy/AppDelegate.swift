@@ -11,15 +11,17 @@ import CoreData
 import GoogleMaps
 import GooglePlaces
 
-let googleApiKey = "AIzaSyD0OWVmOlSUrXkzAPrGzHO_yrPgM1H3mZU"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    private var googleApiKey: String? = "AIzaSyAfGoXv31OY7MP6l_pvvQ92dzeof7SpMS8"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey(googleApiKey)
+        
+        GMSPlacesClient.provideAPIKey(googleApiKey!)
+        GMSServices.provideAPIKey(googleApiKey!)
+        
         return true
     }
 

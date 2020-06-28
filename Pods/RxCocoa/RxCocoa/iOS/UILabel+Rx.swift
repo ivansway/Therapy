@@ -15,15 +15,15 @@ extension Reactive where Base: UILabel {
     
     /// Bindable sink for `text` property.
     public var text: Binder<String?> {
-        return Binder(self.base) { label, text in
-            label.text = text
+        return Binder(self.base) { title, text in
+            title.text = text
         }
     }
 
     /// Bindable sink for `attributedText` property.
     public var attributedText: Binder<NSAttributedString?> {
-        return Binder(self.base) { label, text in
-            label.attributedText = text
+        return Binder(self.base) { title, text in
+            title.attributedText = text
         }
     }
     

@@ -10,10 +10,10 @@ import UIKit
 
 class Button {
     
-    let button: UIButton
-    let superView: UIView
-    let top: CGFloat
-    let title: String
+    private var button: UIButton
+    private var superView: UIView
+    private var top: CGFloat
+    private var title: String
         
     init(button: UIButton, superView: UIView, top: CGFloat, title: String) {
         self.button = button
@@ -23,7 +23,7 @@ class Button {
         setup()
     }
     
-    func setup() {
+    private func setup() {
         
         button.setTitle(title, for: .normal)
         button.layer.cornerRadius = 15

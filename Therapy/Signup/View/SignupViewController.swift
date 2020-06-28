@@ -13,23 +13,21 @@ import RxCocoa
 class SignupViewController: UIViewController {
     
     // INSTANCE
-    let interface = SignupInterface()
-    let signupVM = SignupViewModel()
-    let bag = DisposeBag()
+    private var interface: SignupInterface?
+    private var signupVM: SignupViewModel? = SignupViewModel()
+    var bag: DisposeBag? = DisposeBag()
     
-    var userImage = UIImage()
-    
-    let number = BehaviorRelay(value: 0)
-    
+    private var userImage: UIImage? = UIImage()
+        
     // SCROLL VIEW
-    let scrollView: UIScrollView = {
+    private var scrollView: UIScrollView? = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
     
     // RESIZING VIEW
-    let resizingView: UIView = {
+    private var resizingView: UIView? = {
         let testView = UIView()
         testView.translatesAutoresizingMaskIntoConstraints = false
         return testView
@@ -48,50 +46,55 @@ class SignupViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 0.961, green: 0.981, blue: 0.900, alpha: 1)
         
         // SCROLL VIEW
-        ScrollView.setup(view: self.view, scrollView: self.scrollView, resizingView: self.resizingView, resizingViewTopAnchor: 1000)
+        ScrollView.setup(view: self.view, scrollView: self.scrollView!, resizingView: self.resizingView!, resizingViewTopAnchor: 1000)
         
         // HIDE NAV BAR
         self.navigationController?.navigationBar.isHidden = true
         
-        //
-        self.interface.setts(superView: self.scrollView)
+        // INTERFACE INIT
+        self.interface = SignupInterface(superView: self.scrollView!)
         
         // MAIN IMAGE
-        self.mainImage(superView: self.scrollView, image: nil)
+        self.mainImage(superView: self.scrollView!, image: nil)
         
         // SAVE BUTTON
-        self.interface.saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
+        self.interface?.saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
     
+        // VERIFICATION
+        self.verification()
+        
         // FETCH
         self.fetch()
         
         // CLOSE BUTTON
         self.close()
         
-        // VERIFICATION
-        self.verification()
+        
     }
     
     // FETCH
     func fetch() {
         
         // OBSERVABLE FETCH
-        self.signupVM.fetch()
+        self.signupVM?.fetch()
         
-        Observable.from(self.signupVM.launchData).subscribe({(launchInfo) in
+        Observable.from(optional: self.signupVM!.launchData).subscribe({ launchData in
             
-            switch launchInfo.element?.key {
-            case "name":
-                self.interface.nameTF.text = launchInfo.element?.value as? String
-            case "surname":
-                self.interface.surnameTF.text = launchInfo.element?.value as? String
-            case "image":
-                self.mainImage(superView: self.scrollView, image: launchInfo.element?.value as? UIImage)
-            default:
-                print("")
+            guard let element = launchData.element else {return}
+            
+            
+            if let name = element["name"] {
+                self.interface?.nameTF?.text = name as? String
             }
-        })
-    .disposed(by: bag)
+            
+            if let surname = element["surname"] {
+                self.interface?.surnameTF?.text = surname as? String
+            }
+            
+            if let image = element["image"] {
+                self.mainImage(superView: self.scrollView!, image: image as? UIImage)
+            }
+        }).disposed(by: bag!)
     }
     
     // CLOSE BUTTON
@@ -99,28 +102,26 @@ class SignupViewController: UIViewController {
         let button = UIButton()
         guard let image = UIImage(named: "X_close") else { return }
         button.setImage(image, for: .normal)
-        button.addTarget(self, action: #selector(pop), for: .touchUpInside)
-        Constraints.widthHeightLeadingTop(superView: self.scrollView, view: button, widthAnchor: 23, heightAnchor: 23, leadingAnchor: 18, topAnchor: 20)
+        button.addTarget(self, action: #selector(popVC), for: .touchUpInside)
+        Constraints.widthHeightLeadingTop(superView: self.scrollView!, view: button, widthAnchor: 20, heightAnchor: 20, leadingAnchor: 18, topAnchor: 20)
     }
-    
-    
     
     // MAIN IMAGE
     func mainImage(superView: UIView, image: UIImage?) {
         
         let mainImage = UIButton()
         mainImage.layer.borderWidth = 1
-        mainImage.layer.cornerRadius = 20
+        mainImage.layer.cornerRadius = 24
         mainImage.clipsToBounds = true
         mainImage.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         mainImage.addTarget(self, action: #selector(openPickerController), for: .touchUpInside)
         
         superView.addSubview(mainImage)
         mainImage.translatesAutoresizingMaskIntoConstraints = false
-        mainImage.widthAnchor.constraint(equalTo: superView.widthAnchor, constant: -32).isActive = true
-        mainImage.heightAnchor.constraint(equalToConstant: 134).isActive = true
-        mainImage.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 16).isActive = true
-        mainImage.topAnchor.constraint(equalTo: superView.topAnchor, constant: 180).isActive = true
+        mainImage.widthAnchor.constraint(equalTo: superView.widthAnchor, constant: -40).isActive = true
+        mainImage.heightAnchor.constraint(equalToConstant: 90).isActive = true
+        mainImage.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20).isActive = true
+        mainImage.topAnchor.constraint(equalTo: superView.topAnchor, constant: 146).isActive = true
         
         
         // IMAGE
@@ -155,19 +156,18 @@ class SignupViewController: UIViewController {
     // VERIFICATION
     func verification() {
        
-        self.interface.nameTF.rx.text.map { $0 ?? "" }.bind(to: signupVM.nameText).disposed(by: bag)
-        self.interface.surnameTF.rx.text.map { $0 ?? "" }.bind(to: signupVM.surnameText).disposed(by: bag)
+        self.interface?.nameTF?.rx.text.map { $0 ?? "" }.bind(to: signupVM!.nameText!).disposed(by: bag!)
+        self.interface?.surnameTF?.rx.text.map { $0 ?? "" }.bind(to: signupVM!.surnameText!).disposed(by: bag!)
         
-        signupVM.notEmpty().bind(to: interface.saveButton.rx.isEnabled).disposed(by: bag)
-        signupVM.notEmpty().map { $0 ? 1 : 0.4 }.bind(to: interface.saveButton.rx.alpha).disposed(by: bag)
+        signupVM?.notEmpty().bind(to: interface!.saveButton.rx.isEnabled).disposed(by: bag!)
+        signupVM?.notEmpty().map { $0 ? 1 : 0.4 }.bind(to: interface!.saveButton.rx.alpha).disposed(by: bag!)
         
-//        signupVM.notEmpty().bind(onNext: { _ in self.save() }).disposed(by: bag)
     }
     
     // SAVE
     @objc func save() {
-        self.interface.save(image: userImage)
-        pop()
+        self.interface?.save(image: userImage!)
+        popVC()
     }
 }
 
@@ -184,7 +184,7 @@ extension SignupViewController: UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
-            mainImage(superView: scrollView, image: image)
+            mainImage(superView: scrollView!, image: image)
             picker.dismiss(animated: true)
         }
     }

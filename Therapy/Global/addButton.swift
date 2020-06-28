@@ -10,12 +10,12 @@ import UIKit
 
 class AddButton {
     
-    var superView: UIView
-    var button: UIButton
-    var top: CGFloat
-    var text: String
-    var backColor: UIColor
-    var textColor: UIColor
+    private var superView: UIView
+    private var button: UIButton
+    private var top: CGFloat
+    private var text: String
+    private var backColor: UIColor
+    private var textColor: UIColor
     
     // INIT
     init(superView: UIView, button: UIButton, top: CGFloat,
@@ -31,7 +31,7 @@ class AddButton {
     }
     
     // SETUP
-    func setup() {
+    private func setup() {
         button.backgroundColor = backColor
         button.setTitleColor(textColor, for: .normal)
         button.setTitle(text, for: .normal)

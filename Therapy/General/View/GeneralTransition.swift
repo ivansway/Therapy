@@ -8,35 +8,36 @@
 
 import UIKit
 
-extension GeneralViewController {
+extension GeneralInterface {
     
     // PUSH LOGIN VC
     @objc func pushLoginVC() {
         
-        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "SiginViewController") as! SiginViewController
-       
+        let loginVC = self.theBoard?.instantiateViewController(withIdentifier: "SiginViewController") as! SigninViewController
         loginVC.modalPresentationStyle = .custom
         loginVC.transitioningDelegate = transitionDelegate
-        
-        self.present(loginVC, animated: true)
-        
-        
+        self.viewController.present(loginVC, animated: true)
     }
     
     // PUSH SIGNUP VC
     @objc func pushSignupVC() {
         
-        let signinVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-        
-        self.navigationController?.pushViewController(signinVC, animated: true)
+        let signinVC = self.theBoard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        self.navController.pushViewController(signinVC, animated: true)
     }
     
 
     // PUSH LOCATION VC
-    @objc func pushlocationsVC() {
+    @objc func pushLocationsVC() {
         
-        let locationsVC = self.storyboard?.instantiateViewController(withIdentifier: "LocationsViewController") as! LocationsViewController
-        
-        self.navigationController?.pushViewController(locationsVC, animated: true)
+        let locationsVC = self.theBoard?.instantiateViewController(withIdentifier: "LocationsViewController") as! LocationsViewController
+        self.navController.pushViewController(locationsVC, animated: true)
+    }
+    
+    // PUSH WISH PLACE VC
+    @objc func pushWishPlaceVC() {
+        let wishPlaceVC = self.theBoard?.instantiateViewController(withIdentifier: "WishPlaceViewController") as! WishPlaceViewController
+        self.navController.pushViewController(wishPlaceVC, animated: true)
     }
 }
+

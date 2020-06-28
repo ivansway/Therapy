@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRT-VH-Eer" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="226" y="110"/>
+            <point key="canvasLocation" x="-204" y="110"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -37,12 +37,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501" y="110"/>
+            <point key="canvasLocation" x="477" y="110"/>
         </scene>
-        <!--Sigin View Controller-->
+        <!--Signin View Controller-->
         <scene sceneID="Obf-gE-YUe">
             <objects>
-                <viewController storyboardIdentifier="SiginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="alv-ak-BJY" customClass="SiginViewController" customModule="Therapy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SiginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="alv-ak-BJY" customClass="SigninViewController" customModule="Therapy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MIP-QT-XVd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GlW-t5-sDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="894"/>
+            <point key="canvasLocation" x="-204" y="901"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="UrZ-ap-5eP">
@@ -85,7 +85,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egi-ZW-faB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376" y="890"/>
+            <point key="canvasLocation" x="478" y="901"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="gFc-em-9xS">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CHj-AZ-mck" customClass="PhotoViewController" customModule="Therapy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RKG-EU-EXX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="r7c-e4-fRT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XgZ-vJ-Psp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6M-Tv-eYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1159" y="894"/>
+        </scene>
+        <!--Wish Place View Controller-->
+        <scene sceneID="GXx-LY-Q8l">
+            <objects>
+                <viewController storyboardIdentifier="WishPlaceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bfc-2Z-qT7" customClass="WishPlaceViewController" customModule="Therapy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8gH-1i-Aaw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ibB-8S-0cT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tCR-kX-Ooj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXT-7F-up0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="894"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="59f-GG-ZZM">
@@ -103,6 +135,8 @@
                         <segue destination="alv-ak-BJY" kind="show" identifier="SiginViewController" id="0al-Ua-yFR"/>
                         <segue destination="KkY-U9-ONg" kind="show" identifier="LocationsViewController" id="fir-df-gxH"/>
                         <segue destination="qUx-vk-xVy" kind="show" identifier="MapViewController" id="L8H-Ic-yx0"/>
+                        <segue destination="CHj-AZ-mck" kind="show" identifier="PhotoViewController" id="gi7-Fn-qEJ"/>
+                        <segue destination="Bfc-2Z-qT7" kind="show" identifier="WishPlaceViewController" id="VaY-M8-1ca"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xe5-XB-AZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

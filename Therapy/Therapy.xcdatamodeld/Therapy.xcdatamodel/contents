@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="String"/>
+        <attribute name="electricity" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="gasStation" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="nearby" optional="YES" attributeType="String"/>
+        <attribute name="parkingAbility" optional="YES" attributeType="String"/>
+        <attribute name="portrait" optional="YES" attributeType="String"/>
+        <attribute name="water" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Main" representedClassName="Main" syncable="YES" codeGenerationType="class">
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
@@ -8,5 +18,6 @@
     </entity>
     <elements>
         <element name="Main" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Location" positionX="-63" positionY="9" width="128" height="163"/>
     </elements>
 </model>

@@ -9,5 +9,5 @@
 import Foundation
 
 class UserIdentity {
-    static let identifier = "0"
+    static var identifier = "0"
 }

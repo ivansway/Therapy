@@ -13,7 +13,7 @@ class PresentationController: UIPresentationController {
     var heightVC: CGFloat!
     
     // GESTER RECOGNISER
-    let recognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    let recognizer: UITapGestureRecognizer? = UITapGestureRecognizer(target: self, action: #selector(handleTap))
     
     // INSTANCE
     private var dimmingView: UIView!
@@ -78,13 +78,11 @@ class PresentationController: UIPresentationController {
     // RETURN CHILD FRAIM
     override var frameOfPresentedViewInContainerView: CGRect {
 
-        let bounds = containerView!.bounds
-        let height = bounds.height / heightVC
-        return CGRect(x: 0, y: height, width: bounds.width, height: bounds.height)
+        let bounds: CGRect? = containerView!.bounds
+        let height: CGFloat? = bounds!.height / heightVC
+        return CGRect(x: 0, y: height!, width: bounds!.width, height: bounds!.height)
     }
 }
-
-
 
 
 extension PresentationController: UIViewControllerTransitioningDelegate {
@@ -97,7 +95,7 @@ extension PresentationController: UIViewControllerTransitioningDelegate {
         dimmingView.alpha = 0.0
         
         // ADD RECOGNISER
-        dimmingView.addGestureRecognizer(recognizer)
+        dimmingView.addGestureRecognizer(recognizer!)
     }
     
     // DISMISS

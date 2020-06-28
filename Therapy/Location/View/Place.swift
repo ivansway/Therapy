@@ -7,36 +7,53 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class Place {
     
     // PICKER
-    var parkAbility: Picker!
-    var gasStattion: Picker!
+    var parkAbilityP: Picker?
+    var gasStattionP: Picker?
+    var nearbyPicker: Picker?
+    var amountPicker: Picker?
     
     // INSTANCE
     var addButton: AddButton!
+    var bag: DisposeBag? = DisposeBag()
+    var locationVM: LocationViewModel? = LocationViewModel()
     
     
     // BUTTON
-    let saveButton = UIButton()
+    let saveButton: UIButton? = UIButton()
     
     // TF
-    let parkingTF = UITextField()
-    let gasStationTF = UITextField()
+    private var parkingTF: UITextField? = UITextField()
+    private var gasStationTF: UITextField? = UITextField()
+    private var nearbyTF: UITextField? = UITextField()
+    private var amountTF: UITextField? = UITextField()
     
-    // CHECK BOX
-    let electroBox = UIButton()
-    let waterBox = UIButton()
+    // TV
+    private var descriptionTV: UITextView? = UITextView()
+    
+    // ELECTRO BOX
+    private var electroBox: CheckBox!
+    private var electroButton: UIButton? = UIButton()
+    private var electroIndicator = true
+    
+    // WATER BOX
+    private var waterBox: CheckBox!
+    private var waterButton: UIButton? = UIButton()
+    private var waterIndicator = true
     
     // BACK
-    let back = UIView()
-    var navController: UINavigationController
-    var viewController: UIViewController
-    var superView: UIView
-    var top: CGFloat
-    var waterSwitch: UISwitch
-    var electroSwitch: UISwitch
+    private var back: UIView? = UIView()
+    private var navController: UINavigationController
+    private var viewController: UIViewController
+    private var superView: UIView
+    private var top: CGFloat
+    private var waterSwitch: UISwitch
+    private var electroSwitch: UISwitch
     
     // INIT
     init(superView: UIView, top: CGFloat, waterSwitch: UISwitch, electroSwitch: UISwitch,
@@ -55,10 +72,10 @@ class Place {
     func setup() {
         
         // BACK
-        self.back(height: 450)
+        self.back(height: 650)
         
         // DESCRIPTION
-        self.description(top: 260)
+        self.description(top: 410)
         
         // LINE SEPARATOR
         self.lineSeparator(top: 0)
@@ -74,6 +91,12 @@ class Place {
         
         // LINE SEPARATOR
         self.lineSeparator(top: 250)
+        
+        // LINE SEPARATOR
+        self.lineSeparator(top: 300)
+        
+        // LINE SEPARATOR
+        self.lineSeparator(top: 350)
         
         // TITLES
         
@@ -91,29 +114,41 @@ class Place {
         
             // GAS LOCATION
             self.title(text: "Location", top: 215)
+        
+            // NEARBY
+            self.title(text: "Nearby", top: 265)
+        
+            // AMOUNT
+            self.title(text: "Amount", top: 315)
+        
+            // DESCRIPTION
+            self.topic(text: "Description", top: 380)
             
-            // MAP
-            self.map(top: 215)
+        // MAP
+        self.mapIcon(top: 215)
+        
+        // NEARBY PICKER
+        self.nearbyP()
         
         // PARKING PICKER
         self.picker()
         
+        // AMOUNT PICKER
+        
         // SAVE
         self.save()
-
         
-        // CHECK BOX
-        self.checkBox(top: 63, checkBox: electroBox)
+        // ELECTRO BOX
+        self.electroBox = CheckBox(superView: back!, button: electroButton!, top: 63)
         
-        // CHECK BOX
-        self.checkBox(top: 113, checkBox: waterBox)
-        
+        // WATER BOX
+        self.waterBox = CheckBox(superView: back!, button: waterButton!, top: 113)
     }
     
     // BACK
     func back(height: CGFloat) {
         
-        Constraints.heightLeadingTrailingTop(superView: superView, view: back, heightAnchor: height, leadingAnchor: 0, trailingAnchor: 0, topAnchor: top)
+        Constraints.heightLeadingTrailingTop(superView: superView, view: back!, heightAnchor: height, leadingAnchor: 0, trailingAnchor: 0, topAnchor: top)
     }
     
     // DESCRIPTION
@@ -123,31 +158,40 @@ class Place {
         descriptionBack.layer.borderWidth = 1
         descriptionBack.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
         descriptionBack.layer.cornerRadius = 15
-        Constraints.heightLeadingTrailingTop(superView: back, view: descriptionBack, heightAnchor: 102, leadingAnchor: 16, trailingAnchor: -16, topAnchor: top)
+        Constraints.heightLeadingTrailingTop(superView: back!, view: descriptionBack, heightAnchor: 102, leadingAnchor: 16, trailingAnchor: -16, topAnchor: top)
         
         
-        let descriptionTV = UITextView()
-        descriptionTV.font = UIFont(name: "Optima", size: 18)
-        descriptionTV.backgroundColor = UIColor(red: 0.961, green: 0.981, blue: 0.900, alpha: 1)
-        Constraints.heightLeadingTrailingTop(superView: descriptionBack, view: descriptionTV, heightAnchor: 102, leadingAnchor: 16, trailingAnchor: -16, topAnchor: 0)
+        
+        descriptionTV!.font = UIFont(name: "Optima", size: 18)
+        descriptionTV!.backgroundColor = UIColor(red: 0.961, green: 0.981, blue: 0.900, alpha: 1)
+        Constraints.heightLeadingTrailingTop(superView: descriptionBack, view: descriptionTV!, heightAnchor: 102, leadingAnchor: 16, trailingAnchor: -16, topAnchor: 0)
     }
     
     // LINE SEPARATOR
     func lineSeparator(top: CGFloat) {
         
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-        Constraints.heightLeadingTrailingTop(superView: back, view: view, heightAnchor: 1, leadingAnchor: 16, trailingAnchor: 0, topAnchor: top)
+        view.backgroundColor = .lightGray
+        Constraints.heightLeadingTrailingTop(superView: back!, view: view, heightAnchor: 1, leadingAnchor: 16, trailingAnchor: -16, topAnchor: top)
     }
     
-    // PARKING TITLE
+    // TITLE
     func title(text: String, top: CGFloat) {
         
         let label = UILabel()
         label.text = text
         label.font = UIFont(name: "Optima", size: 18)
-        Constraints.leadingTopStretchableWidthHeight(superView: back, view: label, leadingAnchor: 16, topAnchor: top, widthAnchor: 10, heightAnchor: 24)
+        Constraints.leadingTopStretchableWidthHeight(superView: back!, view: label, leadingAnchor: 16, topAnchor: top, widthAnchor: 10, heightAnchor: 24)
         
+    }
+    
+    // TOPIC
+    func topic(text: String, top: CGFloat) {
+        
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        Constraints.leadingTopStretchableWidthHeight(superView: back!, view: label, leadingAnchor: 16, topAnchor: top, widthAnchor: 10, heightAnchor: 24)
     }
     
     // PICKER
@@ -156,60 +200,55 @@ class Place {
         // DISTANCE ARRAY
         let distance = Array(0...99)
         var stringDistance: [String] = []
-        for item in distance {
-            stringDistance.append("\(item)" + " km")
-        }
+        Observable.from(distance).map({ number in "\(number)" + " km" }).bind(onNext: { stringDistance.append($0) }).disposed(by: bag!)
         
         // PARK ABILITY
-        self.parkAbility = Picker(superView: back, textField: parkingTF, array: ["", "Car", "Truck"], top: 16)
+        self.parkAbilityP = Picker(superView: back!, textField: parkingTF!, array: ["", "Car", "Truck"], top: 16)
         
         // GAS STATION
-        self.gasStattion = Picker(superView: back, textField: gasStationTF, array: stringDistance, top: 165)
+        self.gasStattionP = Picker(superView: back!, textField: gasStationTF!, array: stringDistance, top: 165)
+        
+        var arrayInt: [String] = []
+        Observable.from(distance).bind(onNext: { arrayInt.append(String($0)) }).disposed(by: bag!)
+        
+        // AMOUNT PICKER
+        self.amountPicker = Picker(superView: back!, textField: amountTF!, array: arrayInt, top: 315)
+        
+        
+        // BIND
+        self.parkingTF!.rx.text.map({ $0 ?? "" }).bind(to: locationVM!.parking).disposed(by: bag!)
+        self.nearbyTF!.rx.text.map({ $0 ?? "" }).bind(to: locationVM!.nearby).disposed(by: bag!)
+        self.descriptionTV!.rx.text.map({ $0 ?? "" }).bind(to: locationVM!.description).disposed(by: bag!)
     }
+    
+   
     
     // SAVE BUTTON
     func save() {
-        self.addButton = AddButton(superView: back, button: saveButton, top: 322, text: "Save", backColor: UIColor(red: 0.184, green: 0.352, blue: 0.215, alpha: 1), textColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1))
-    }
-    
-    // DEPRECATED
-    // THE SWITCH
-//    func theSwitch(theSwitch: UISwitch, top: CGFloat) {
-//        theSwitch.onTintColor = UIColor(red: 0.184, green: 0.352, blue: 0.215, alpha: 1)
-//        Constraints.widthHeightTrailingTop(superView: back, view: theSwitch, widthAnchor: 46, heightAnchor: 36, trailingAnchor: -16, topAnchor: top)
-//    }
-    
-    // CHECK BOX
-    func checkBox(top: CGFloat, checkBox: UIButton) {
+        locationVM!.isValid().bind(to: saveButton!.rx.isEnabled).disposed(by: bag!)
+        locationVM!.isValid().map { $0 ? 1 : 0.4 }.bind(to: saveButton!.rx.alpha).disposed(by: bag!)
         
-        guard let image = UIImage(named: "check_box") else { return }
-        checkBox.setImage(image, for: .normal)
-        checkBox.alpha = 0.6
-        checkBox.addTarget(self, action: #selector(checkMark(sender:)), for: .touchUpInside)
-        Constraints.widthHeightTrailingTop(superView: back, view: checkBox, widthAnchor: 24, heightAnchor: 24, trailingAnchor: -16, topAnchor: top)
-        
+        self.addButton = AddButton(superView: back!, button: saveButton!, top: 532, text: "Save", backColor: UIColor(red: 0.184, green: 0.352, blue: 0.215, alpha: 1), textColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1))
     }
     
-    // CHECK MARK
-    @objc func checkMark(sender: UIButton) {
-        let checkMark = UIImageView()
-        guard let image = UIImage(named: "checkMark") else { return }
-        checkMark.image = image
-        Constraints.widthHeightTrailingTop(superView: sender, view: checkMark, widthAnchor: 15, heightAnchor: 15, trailingAnchor: -4, topAnchor: 4)
-    }
-    
-    // MAP
-    func map(top: CGFloat) {
-        let map = UIButton()
+    // MAP ICON
+    func mapIcon(top: CGFloat) {
+        let mapIcon = UIButton()
         guard let image = UIImage(named: "map_icon") else { return }
-        map.setImage(image, for: .normal)
-        map.addTarget(self, action: #selector(openMap), for: .touchUpInside)
-        Constraints.widthHeightTrailingTop(superView: back, view: map, widthAnchor: 27, heightAnchor: 27, trailingAnchor: -16, topAnchor: top)
+        mapIcon.setImage(image, for: .normal)
+        mapIcon.addTarget(self, action: #selector(openMap), for: .touchUpInside)
+        Constraints.widthHeightTrailingTop(superView: back!, view: mapIcon, widthAnchor: 27, heightAnchor: 27, trailingAnchor: -16, topAnchor: top)
     }
     
+    // OPEN MAP
     @objc func openMap() {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let mapVC = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-        self.viewController.present(mapVC, animated: true)
+        self.navController.pushViewController(mapVC, animated: true)
+    }
+    
+    // NEARBY
+    func nearbyP() {
+        self.nearbyPicker = Picker(superView: back!, textField: nearbyTF!, array: ["", "City", "River", "Lake", "Sea", "Ocean", "Forest"], top: 265)
     }
 }

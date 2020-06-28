@@ -9,16 +9,14 @@
 import UIKit
 
 class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-    
-//    weak var delegate: PickerDelegate?
-    
+        
     // VARIABLE TF
-    var textField: UITextField
-    var superView: UIView
-    var top: CGFloat
-    var array: [String]
-    let picker = UIPickerView()
-    var pickedNumber = ""
+    private var textField: UITextField
+    private var superView: UIView
+    private var top: CGFloat
+    private var array: [String]
+    private var picker: UIPickerView? = UIPickerView()
+    private var pickedNumber = ""
     
     init(superView: UIView, textField: UITextField, array: [String], top: CGFloat) {
         self.superView = superView
@@ -30,55 +28,52 @@ class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFiel
     }
     
     // SETTINGS
-    func settings() {
+    private func settings() {
 
         // DELEGATE
-        self.picker.delegate = self
-        self.picker.dataSource = self
+        self.picker?.delegate = self
+        self.picker?.dataSource = self
         
         // TF
         textField.delegate = self
         textField.text = "Choose option"
         textField.textAlignment = .right
         textField.font = UIFont(name: "Optima", size: 18)
-        
         superView.addSubview(textField)
-        
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.topAnchor.constraint(equalTo: superView.topAnchor, constant: top).isActive = true
         textField.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -16).isActive = true
         textField.heightAnchor.constraint(equalToConstant: 20).isActive = true
         textField.widthAnchor.constraint(greaterThanOrEqualToConstant: 20).isActive = true
-        
-        
         Constraints.widthHeightTrailingTop(superView: superView, view: textField, widthAnchor: 170, heightAnchor: 20, trailingAnchor: -16, topAnchor: top)
         
         // TOOLBAR
-        let toolbar = UIToolbar()
-        toolbar.backgroundColor = UIColor(red: 0.186, green: 0.146, blue: 0.044, alpha: 1)
-        toolbar.sizeToFit()
+        let toolbar: UIToolbar? = UIToolbar()
+        toolbar?.backgroundColor = UIColor(red: 0.186, green: 0.146, blue: 0.044, alpha: 1)
+        toolbar?.sizeToFit()
         
         
         // ITEMS
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelAction))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker))
+        let cancelButton: UIBarButtonItem? = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelAction))
+        let flexSpace: UIBarButtonItem? = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton: UIBarButtonItem? = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker))
         
         
         // DONE BUTTON COLOR
-        doneButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :UIColor(red: 1, green: 1, blue: 1, alpha: 1),NSAttributedString.Key.font:UIFont.init(name: "Copperplate", size: 20) as Any], for: .normal)
+        doneButton?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :UIColor(red: 1, green: 1, blue: 1, alpha: 1),NSAttributedString.Key.font:UIFont.init(name: "Copperplate", size: 20) as Any], for: .normal)
 
         // CANCEL BUTTON COLOR
-        cancelButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :UIColor(red: 0.186, green: 0.146, blue: 0.044, alpha: 1),NSAttributedString.Key.font:UIFont.init(name: "Copperplate", size: 20) as Any], for: .normal)
+        cancelButton?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :UIColor(red: 0.186, green: 0.146, blue: 0.044, alpha: 1),NSAttributedString.Key.font:UIFont.init(name: "Copperplate", size: 20) as Any], for: .normal)
         
         
-        toolbar.setItems([cancelButton, flexSpace, doneButton], animated: false)
+        toolbar?.setItems([cancelButton!, flexSpace!, doneButton!], animated: false)
         
         
         textField.inputView = self.picker
         textField.inputAccessoryView = toolbar
     }
 
+    // TF DELEGATE
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -95,30 +90,24 @@ class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFiel
         self.pickedNumber = String(array[row])
     }
     
-    // TF DELEGATE
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
     
-    
-    
-    @objc func donedatePicker() {
-        
-//        self.delegate?.pass(text: self.pickedNumber)
+    // DONE
+    @objc private func donedatePicker() {
         self.textField.text = self.pickedNumber
         self.superView.endEditing(true)
     }
     
-    @objc func cancelAction() {
+    // CANCEL
+    @objc private func cancelAction() {
         
         if self.pickedNumber == "" {
-//            self.delegate?.pass(text: "Choose option")
             self.textField.text = "Choose option"
             self.superView.endEditing(true)
             
         } else {
-            
-//            self.delegate?.pass(text: self.pickedNumber)
             self.textField.text = self.pickedNumber
             self.superView.endEditing(true)
         }

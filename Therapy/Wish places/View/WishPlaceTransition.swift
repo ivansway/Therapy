@@ -1,16 +1,16 @@
 //
-//  MapTransition.swift
+//  WishPlaceTransition.swift
 //  Therapy
 //
-//  Created by Ivan Myrza on 18/06/2020.
+//  Created by Ivan Myrza on 27/06/2020.
 //  Copyright © 2020 Ivan Myrza. All rights reserved.
 //
 
 import UIKit
 
-extension MapViewController {
+extension WishPlaceViewController {
     
-    // DISMISS SELF
+    // POP SELF
     @objc func popVC() {
         self.navigationController?.popViewController(animated: true)
     }

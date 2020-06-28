@@ -48,4 +48,14 @@ class Constraints {
         view.widthAnchor.constraint(greaterThanOrEqualToConstant: widthAnchor).isActive = true
         view.heightAnchor.constraint(equalToConstant: heightAnchor).isActive = true
     }
+    
+    class func trailingTopStretchableWidthHeight(superView: UIView, view: UIView, trailing: CGFloat, top: CGFloat, width: CGFloat, height: CGFloat) {
+    
+        superView.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: trailing).isActive = true
+        view.topAnchor.constraint(equalTo: superView.topAnchor, constant: top).isActive = true
+        view.widthAnchor.constraint(greaterThanOrEqualToConstant: width).isActive = true
+        view.heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
 }

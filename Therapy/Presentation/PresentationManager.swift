@@ -10,7 +10,7 @@ import UIKit
 
 class PresentationManager: NSObject, UIViewControllerTransitioningDelegate {
     
-    var heightVC: CGFloat!
+    private var heightVC: CGFloat!
     
     init(heightVC: CGFloat) {
         self.heightVC = heightVC
@@ -23,7 +23,7 @@ class PresentationManager: NSObject, UIViewControllerTransitioningDelegate {
         case bottom
     }
     
-    var direction: PresentationDirection = .left
+    var direction: PresentationDirection? = .left
     
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		41005CC72494FAA800164594 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41005CC62494FAA800164594 /* ScrollView.swift */; };
+		4101D84624A272E700184AD7 /* MapNetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101D84524A272E700184AD7 /* MapNetworkDelegate.swift */; };
+		4101D84824A2836500184AD7 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101D84724A2836400184AD7 /* PlaceCell.swift */; };
+		410B535524A7874D00CCA88B /* WishPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B535424A7874D00CCA88B /* WishPlaceViewController.swift */; };
+		410B535724A7A9B900CCA88B /* WishPlaceTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B535624A7A9B900CCA88B /* WishPlaceTransition.swift */; };
+		410B535924A7B16000CCA88B /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B535824A7B16000CCA88B /* StoryCell.swift */; };
 		411BF61D2494E6F30012B1DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF61C2494E6F30012B1DB /* AppDelegate.swift */; };
 		411BF61F2494E6F30012B1DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF61E2494E6F30012B1DB /* SceneDelegate.swift */; };
 		411BF6242494E6F30012B1DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411BF6222494E6F30012B1DB /* Main.storyboard */; };
@@ -17,12 +22,20 @@
 		411BF6372494E6F50012B1DB /* TherapyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6362494E6F50012B1DB /* TherapyTests.swift */; };
 		411BF6422494E6F50012B1DB /* TherapyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6412494E6F50012B1DB /* TherapyUITests.swift */; };
 		411BF6502494EA850012B1DB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF64F2494EA850012B1DB /* SignupViewController.swift */; };
+		413FB56E249D3E100081538D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB56D249D3E100081538D /* PhotoViewController.swift */; };
+		413FB570249D3EAF0081538D /* PhotoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB56F249D3EAF0081538D /* PhotoTransition.swift */; };
+		413FB572249D3FA90081538D /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB571249D3FA90081538D /* LocationViewModel.swift */; };
+		413FB574249D41AA0081538D /* LocationBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB573249D41AA0081538D /* LocationBaseManager.swift */; };
+		413FB576249D627C0081538D /* PhotoInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB575249D627C0081538D /* PhotoInterface.swift */; };
+		413FB578249E3BB00081538D /* MapInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB577249E3BB00081538D /* MapInterface.swift */; };
+		413FB57A249E68D10081538D /* MapNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB579249E68D10081538D /* MapNetworkManager.swift */; };
+		413FB57C249EB4580081538D /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB57B249EB4580081538D /* MapModel.swift */; };
 		415B2C9D249B8C7000FEFC0E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B2C9C249B8C7000FEFC0E /* MapViewController.swift */; };
 		4186266424951C7200C85A40 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266324951C7200C85A40 /* SignupViewModel.swift */; };
 		4186266624951D8600C85A40 /* SignupBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266524951D8600C85A40 /* SignupBaseManager.swift */; };
 		4186266824951FAE00C85A40 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266724951FAE00C85A40 /* UserIdentity.swift */; };
 		4186266A249530D500C85A40 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862669249530D400C85A40 /* Button.swift */; };
-		418626702495535600C85A40 /* SiginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266F2495535600C85A40 /* SiginViewController.swift */; };
+		418626702495535600C85A40 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266F2495535600C85A40 /* SigninViewController.swift */; };
 		41862672249554D300C85A40 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862671249554D300C85A40 /* LoginViewModel.swift */; };
 		418626742495559B00C85A40 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418626732495559B00C85A40 /* TextField.swift */; };
 		4186267A249558DD00C85A40 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862679249558DD00C85A40 /* GeneralViewController.swift */; };
@@ -35,6 +48,8 @@
 		41AC4AA024994F2300DDECE5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC4A9F24994F2300DDECE5 /* Place.swift */; };
 		41C6A556249B921800055C84 /* MapTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C6A555249B921800055C84 /* MapTransition.swift */; };
 		41C6A558249B935200055C84 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C6A557249B935200055C84 /* Map.swift */; };
+		41C6A55A249BDE1600055C84 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C6A559249BDE1600055C84 /* CheckBox.swift */; };
+		41C6A55C249C0C2F00055C84 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C6A55B249C0C2F00055C84 /* MapViewModel.swift */; };
 		41D51B64249638860096D21D /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B63249638860096D21D /* PresentationManager.swift */; };
 		41D51B66249638F40096D21D /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B65249638F40096D21D /* PresentationController.swift */; };
 		41D51B68249685450096D21D /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D51B67249685450096D21D /* DatePicker.swift */; };
@@ -67,6 +82,11 @@
 
 /* Begin PBXFileReference section */
 		41005CC62494FAA800164594 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		4101D84524A272E700184AD7 /* MapNetworkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNetworkDelegate.swift; sourceTree = "<group>"; };
+		4101D84724A2836400184AD7 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		410B535424A7874D00CCA88B /* WishPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishPlaceViewController.swift; sourceTree = "<group>"; };
+		410B535624A7A9B900CCA88B /* WishPlaceTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishPlaceTransition.swift; sourceTree = "<group>"; };
+		410B535824A7B16000CCA88B /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		411BF6192494E6F30012B1DB /* Therapy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Therapy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		411BF61C2494E6F30012B1DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		411BF61E2494E6F30012B1DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,12 +102,20 @@
 		411BF6412494E6F50012B1DB /* TherapyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyUITests.swift; sourceTree = "<group>"; };
 		411BF6432494E6F50012B1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		411BF64F2494EA850012B1DB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		413FB56D249D3E100081538D /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		413FB56F249D3EAF0081538D /* PhotoTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTransition.swift; sourceTree = "<group>"; };
+		413FB571249D3FA90081538D /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		413FB573249D41AA0081538D /* LocationBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBaseManager.swift; sourceTree = "<group>"; };
+		413FB575249D627C0081538D /* PhotoInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInterface.swift; sourceTree = "<group>"; };
+		413FB577249E3BB00081538D /* MapInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInterface.swift; sourceTree = "<group>"; };
+		413FB579249E68D10081538D /* MapNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNetworkManager.swift; sourceTree = "<group>"; };
+		413FB57B249EB4580081538D /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		415B2C9C249B8C7000FEFC0E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4186266324951C7200C85A40 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		4186266524951D8600C85A40 /* SignupBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupBaseManager.swift; sourceTree = "<group>"; };
 		4186266724951FAE00C85A40 /* UserIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
 		41862669249530D400C85A40 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		4186266F2495535600C85A40 /* SiginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginViewController.swift; sourceTree = "<group>"; };
+		4186266F2495535600C85A40 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		41862671249554D300C85A40 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		418626732495559B00C85A40 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		41862679249558DD00C85A40 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +128,8 @@
 		41AC4A9F24994F2300DDECE5 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		41C6A555249B921800055C84 /* MapTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTransition.swift; sourceTree = "<group>"; };
 		41C6A557249B935200055C84 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		41C6A559249BDE1600055C84 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		41C6A55B249C0C2F00055C84 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		41D51B63249638860096D21D /* PresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
 		41D51B65249638F40096D21D /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		41D51B67249685450096D21D /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
@@ -163,12 +193,16 @@
 		41005CC52494FA9300164594 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				41862669249530D400C85A40 /* Button.swift */,
 				41005CC62494FAA800164594 /* ScrollView.swift */,
 				41FBFC062494FF7F0016F8E0 /* Constraints.swift */,
 				4186266724951FAE00C85A40 /* UserIdentity.swift */,
 				41D51B67249685450096D21D /* DatePicker.swift */,
 				41F88E79249A1A0600FEC000 /* Picker.swift */,
 				41F88E7B249A9FC000FEC000 /* addButton.swift */,
+				418626732495559B00C85A40 /* TextField.swift */,
+				41C6A559249BDE1600055C84 /* CheckBox.swift */,
+				410B535824A7B16000CCA88B /* StoryCell.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -209,6 +243,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		410B535024A7870700CCA88B /* Wish places */ = {
+			isa = PBXGroup;
+			children = (
+				410B535324A7872300CCA88B /* View */,
+				410B535224A7872000CCA88B /* View Model */,
+				410B535124A7871D00CCA88B /* Services */,
+			);
+			path = "Wish places";
+			sourceTree = "<group>";
+		};
+		410B535124A7871D00CCA88B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		410B535224A7872000CCA88B /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		410B535324A7872300CCA88B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				410B535424A7874D00CCA88B /* WishPlaceViewController.swift */,
+				410B535624A7A9B900CCA88B /* WishPlaceTransition.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		411BF6102494E6F30012B1DB = {
 			isa = PBXGroup;
 			children = (
@@ -234,17 +301,17 @@
 		411BF61B2494E6F30012B1DB /* Therapy */ = {
 			isa = PBXGroup;
 			children = (
-				415B2C98249B8C3500FEFC0E /* Map */,
 				41005CC52494FA9300164594 /* Global */,
-				41D51B62249638480096D21D /* Presentation */,
 				411BF61C2494E6F30012B1DB /* AppDelegate.swift */,
 				411BF61E2494E6F30012B1DB /* SceneDelegate.swift */,
-				41862669249530D400C85A40 /* Button.swift */,
-				418626732495559B00C85A40 /* TextField.swift */,
 				41862675249558A400C85A40 /* General */,
 				41005CC92494FB5200164594 /* Signup */,
 				4186266B2495530D00C85A40 /* Sigin */,
 				41AC4A972499486500DDECE5 /* Location */,
+				415B2C98249B8C3500FEFC0E /* Map */,
+				41D51B62249638480096D21D /* Presentation */,
+				413FB569249D3DE20081538D /* Photo */,
+				410B535024A7870700CCA88B /* Wish places */,
 				411BF6222494E6F30012B1DB /* Main.storyboard */,
 				411BF6282494E6F40012B1DB /* Assets.xcassets */,
 				411BF62A2494E6F40012B1DB /* LaunchScreen.storyboard */,
@@ -272,11 +339,54 @@
 			path = TherapyUITests;
 			sourceTree = "<group>";
 		};
+		413FB569249D3DE20081538D /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				413FB56C249D3DF30081538D /* View */,
+				413FB56B249D3DF00081538D /* ViewModel */,
+				413FB56A249D3DED0081538D /* Services */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		413FB56A249D3DED0081538D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		413FB56B249D3DF00081538D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		413FB56C249D3DF30081538D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				413FB56D249D3E100081538D /* PhotoViewController.swift */,
+				413FB575249D627C0081538D /* PhotoInterface.swift */,
+				413FB56F249D3EAF0081538D /* PhotoTransition.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		413FB57D249EBA310081538D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				413FB57B249EB4580081538D /* MapModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		415B2C98249B8C3500FEFC0E /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				415B2C9B249B8C4D00FEFC0E /* View */,
 				415B2C9A249B8C4900FEFC0E /* ViewModel */,
+				413FB57D249EBA310081538D /* Model */,
 				415B2C99249B8C4500FEFC0E /* Services */,
 			);
 			path = Map;
@@ -285,6 +395,8 @@
 		415B2C99249B8C4500FEFC0E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				413FB579249E68D10081538D /* MapNetworkManager.swift */,
+				4101D84524A272E700184AD7 /* MapNetworkDelegate.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -292,6 +404,7 @@
 		415B2C9A249B8C4900FEFC0E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				41C6A55B249C0C2F00055C84 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -300,7 +413,9 @@
 			isa = PBXGroup;
 			children = (
 				415B2C9C249B8C7000FEFC0E /* MapViewController.swift */,
+				413FB577249E3BB00081538D /* MapInterface.swift */,
 				41C6A557249B935200055C84 /* Map.swift */,
+				4101D84724A2836400184AD7 /* PlaceCell.swift */,
 				41C6A555249B921800055C84 /* MapTransition.swift */,
 			);
 			path = View;
@@ -334,7 +449,7 @@
 		4186266E2495532500C85A40 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4186266F2495535600C85A40 /* SiginViewController.swift */,
+				4186266F2495535600C85A40 /* SigninViewController.swift */,
 				4186267F2495617B00C85A40 /* LoginTransition.swift */,
 			);
 			path = View;
@@ -387,6 +502,7 @@
 		41AC4A982499486B00DDECE5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				413FB573249D41AA0081538D /* LocationBaseManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -394,6 +510,7 @@
 		41AC4A992499486F00DDECE5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				413FB571249D3FA90081538D /* LocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -706,33 +823,48 @@
 				418626802495617B00C85A40 /* LoginTransition.swift in Sources */,
 				4186267C249559EB00C85A40 /* GeneralInterface.swift in Sources */,
 				41D51B66249638F40096D21D /* PresentationController.swift in Sources */,
-				418626702495535600C85A40 /* SiginViewController.swift in Sources */,
+				418626702495535600C85A40 /* SigninViewController.swift in Sources */,
 				41AC4A9E24994A7300DDECE5 /* LocationInterface.swift in Sources */,
 				41D51B64249638860096D21D /* PresentationManager.swift in Sources */,
 				411BF6272494E6F30012B1DB /* Therapy.xcdatamodeld in Sources */,
+				413FB572249D3FA90081538D /* LocationViewModel.swift in Sources */,
 				418626822496275900C85A40 /* RegistrationTransition.swift in Sources */,
 				41D51B68249685450096D21D /* DatePicker.swift in Sources */,
 				41F88E7A249A1A0600FEC000 /* Picker.swift in Sources */,
 				41FBFC072494FF800016F8E0 /* Constraints.swift in Sources */,
+				413FB570249D3EAF0081538D /* PhotoTransition.swift in Sources */,
 				418626742495559B00C85A40 /* TextField.swift in Sources */,
 				4186266624951D8600C85A40 /* SignupBaseManager.swift in Sources */,
+				410B535924A7B16000CCA88B /* StoryCell.swift in Sources */,
 				41AC4AA024994F2300DDECE5 /* Place.swift in Sources */,
+				413FB57C249EB4580081538D /* MapModel.swift in Sources */,
+				410B535524A7874D00CCA88B /* WishPlaceViewController.swift in Sources */,
 				4186266824951FAE00C85A40 /* UserIdentity.swift in Sources */,
+				413FB574249D41AA0081538D /* LocationBaseManager.swift in Sources */,
 				411BF6502494EA850012B1DB /* SignupViewController.swift in Sources */,
+				41C6A55A249BDE1600055C84 /* CheckBox.swift in Sources */,
+				413FB576249D627C0081538D /* PhotoInterface.swift in Sources */,
+				413FB57A249E68D10081538D /* MapNetworkManager.swift in Sources */,
+				41C6A55C249C0C2F00055C84 /* MapViewModel.swift in Sources */,
 				411BF61D2494E6F30012B1DB /* AppDelegate.swift in Sources */,
+				4101D84824A2836500184AD7 /* PlaceCell.swift in Sources */,
 				41AC4A9C249948A200DDECE5 /* LocationsViewController.swift in Sources */,
 				41005CC72494FAA800164594 /* ScrollView.swift in Sources */,
 				41862672249554D300C85A40 /* LoginViewModel.swift in Sources */,
+				4101D84624A272E700184AD7 /* MapNetworkDelegate.swift in Sources */,
 				41FBFC032494FEAD0016F8E0 /* SignupInterface.swift in Sources */,
 				411BF61F2494E6F30012B1DB /* SceneDelegate.swift in Sources */,
+				413FB578249E3BB00081538D /* MapInterface.swift in Sources */,
 				41C6A558249B935200055C84 /* Map.swift in Sources */,
 				4186267A249558DD00C85A40 /* GeneralViewController.swift in Sources */,
 				41F88E7E249AC9BC00FEC000 /* LocationTransition.swift in Sources */,
+				413FB56E249D3E100081538D /* PhotoViewController.swift in Sources */,
 				4186267E24955FA300C85A40 /* GeneralTransition.swift in Sources */,
 				41C6A556249B921800055C84 /* MapTransition.swift in Sources */,
 				41F88E7C249A9FC000FEC000 /* addButton.swift in Sources */,
 				4186266424951C7200C85A40 /* SignupViewModel.swift in Sources */,
 				415B2C9D249B8C7000FEFC0E /* MapViewController.swift in Sources */,
+				410B535724A7A9B900CCA88B /* WishPlaceTransition.swift in Sources */,
 				4186266A249530D500C85A40 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
