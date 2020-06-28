@@ -48,7 +48,7 @@ class MapViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         // CLOSE BUTTON
-        self.close()
+//        self.close()
         
         // INTERFACE
         self.interface = MapInterface(superView: self.view)
