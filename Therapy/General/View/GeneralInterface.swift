@@ -16,7 +16,7 @@ class GeneralInterface {
     lazy var transitionDelegate: PresentationManager? = PresentationManager(heightVC: 1.5)
     
     // NAV CONTROLLER
-    var navController: UINavigationController
+    internal var navController: UINavigationController
     private var scrollView: UIView
     var viewController: UIViewController
     private var superView: UIView

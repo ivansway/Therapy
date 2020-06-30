@@ -12,6 +12,11 @@ import RxCocoa
 
 class SignupViewModel {
     
+    init() {
+        // FETCH USER DATA
+        self.fetch()
+    }
+    
     // INSTANCE
     let signupBM = SignupBaseManager()
     let bag: DisposeBag? = DisposeBag()

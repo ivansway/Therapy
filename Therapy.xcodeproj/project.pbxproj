@@ -13,6 +13,7 @@
 		410B535524A7874D00CCA88B /* WishPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B535424A7874D00CCA88B /* WishPlaceViewController.swift */; };
 		410B535724A7A9B900CCA88B /* WishPlaceTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B535624A7A9B900CCA88B /* WishPlaceTransition.swift */; };
 		410B535924A7B16000CCA88B /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B535824A7B16000CCA88B /* StoryCell.swift */; };
+		4110975324AA3B2A00C9D702 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4110975224AA3B2A00C9D702 /* PasswordTextField.swift */; };
 		411BF61D2494E6F30012B1DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF61C2494E6F30012B1DB /* AppDelegate.swift */; };
 		411BF61F2494E6F30012B1DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF61E2494E6F30012B1DB /* SceneDelegate.swift */; };
 		411BF6242494E6F30012B1DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411BF6222494E6F30012B1DB /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		413FB57A249E68D10081538D /* MapNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB579249E68D10081538D /* MapNetworkManager.swift */; };
 		413FB57C249EB4580081538D /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB57B249EB4580081538D /* MapModel.swift */; };
 		415B2C9D249B8C7000FEFC0E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B2C9C249B8C7000FEFC0E /* MapViewController.swift */; };
+		415FC89524AB815800A35CF2 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415FC89424AB815800A35CF2 /* Participant.swift */; };
 		4186266424951C7200C85A40 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266324951C7200C85A40 /* SignupViewModel.swift */; };
 		4186266624951D8600C85A40 /* SignupBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266524951D8600C85A40 /* SignupBaseManager.swift */; };
 		4186266824951FAE00C85A40 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186266724951FAE00C85A40 /* UserIdentity.swift */; };
@@ -87,6 +89,7 @@
 		410B535424A7874D00CCA88B /* WishPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishPlaceViewController.swift; sourceTree = "<group>"; };
 		410B535624A7A9B900CCA88B /* WishPlaceTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishPlaceTransition.swift; sourceTree = "<group>"; };
 		410B535824A7B16000CCA88B /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		4110975224AA3B2A00C9D702 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		411BF6192494E6F30012B1DB /* Therapy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Therapy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		411BF61C2494E6F30012B1DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		411BF61E2494E6F30012B1DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 		413FB579249E68D10081538D /* MapNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNetworkManager.swift; sourceTree = "<group>"; };
 		413FB57B249EB4580081538D /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		415B2C9C249B8C7000FEFC0E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		415FC89424AB815800A35CF2 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
 		4186266324951C7200C85A40 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		4186266524951D8600C85A40 /* SignupBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupBaseManager.swift; sourceTree = "<group>"; };
 		4186266724951FAE00C85A40 /* UserIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
@@ -201,8 +205,10 @@
 				41F88E79249A1A0600FEC000 /* Picker.swift */,
 				41F88E7B249A9FC000FEC000 /* addButton.swift */,
 				418626732495559B00C85A40 /* TextField.swift */,
+				4110975224AA3B2A00C9D702 /* PasswordTextField.swift */,
 				41C6A559249BDE1600055C84 /* CheckBox.swift */,
 				410B535824A7B16000CCA88B /* StoryCell.swift */,
+				415FC89424AB815800A35CF2 /* Participant.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -826,10 +832,12 @@
 				418626702495535600C85A40 /* SigninViewController.swift in Sources */,
 				41AC4A9E24994A7300DDECE5 /* LocationInterface.swift in Sources */,
 				41D51B64249638860096D21D /* PresentationManager.swift in Sources */,
+				4110975324AA3B2A00C9D702 /* PasswordTextField.swift in Sources */,
 				411BF6272494E6F30012B1DB /* Therapy.xcdatamodeld in Sources */,
 				413FB572249D3FA90081538D /* LocationViewModel.swift in Sources */,
 				418626822496275900C85A40 /* RegistrationTransition.swift in Sources */,
 				41D51B68249685450096D21D /* DatePicker.swift in Sources */,
+				415FC89524AB815800A35CF2 /* Participant.swift in Sources */,
 				41F88E7A249A1A0600FEC000 /* Picker.swift in Sources */,
 				41FBFC072494FF800016F8E0 /* Constraints.swift in Sources */,
 				413FB570249D3EAF0081538D /* PhotoTransition.swift in Sources */,

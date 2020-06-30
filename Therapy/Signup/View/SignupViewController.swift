@@ -46,19 +46,19 @@ class SignupViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 0.961, green: 0.981, blue: 0.900, alpha: 1)
         
         // SCROLL VIEW
-        ScrollView.setup(view: self.view, scrollView: self.scrollView!, resizingView: self.resizingView!, resizingViewTopAnchor: 1000)
+        ScrollView.setup(view: self.view, scrollView: self.scrollView!, resizingView: self.resizingView!, resizingViewTopAnchor: 1300)
         
         // HIDE NAV BAR
         self.navigationController?.navigationBar.isHidden = true
         
         // INTERFACE INIT
-        self.interface = SignupInterface(superView: self.scrollView!)
+        self.interface = SignupInterface(superView: self.scrollView!, viewController: self)
         
         // MAIN IMAGE
         self.mainImage(superView: self.scrollView!, image: nil)
         
         // SAVE BUTTON
-        self.interface?.saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
+        self.interface?.saveButton?.addTarget(self, action: #selector(save), for: .touchUpInside)
     
         // VERIFICATION
         self.verification()
@@ -69,14 +69,13 @@ class SignupViewController: UIViewController {
         // CLOSE BUTTON
         self.close()
         
+        // ADD PARTICIPANT BUTTON
+        self.interface?.addParticipantB()
         
     }
     
     // FETCH
     func fetch() {
-        
-        // OBSERVABLE FETCH
-        self.signupVM?.fetch()
         
         Observable.from(optional: self.signupVM!.launchData).subscribe({ launchData in
             
@@ -84,11 +83,11 @@ class SignupViewController: UIViewController {
             
             
             if let name = element["name"] {
-                self.interface?.nameTF?.text = name as? String
+//                self.interface?.nameTF?.text = name as? String
             }
             
             if let surname = element["surname"] {
-                self.interface?.surnameTF?.text = surname as? String
+//                self.interface?.surnameTF?.text = surname as? String
             }
             
             if let image = element["image"] {
@@ -102,8 +101,9 @@ class SignupViewController: UIViewController {
         let button = UIButton()
         guard let image = UIImage(named: "X_close") else { return }
         button.setImage(image, for: .normal)
+        button.alpha = 0.9
         button.addTarget(self, action: #selector(popVC), for: .touchUpInside)
-        Constraints.widthHeightLeadingTop(superView: self.scrollView!, view: button, widthAnchor: 20, heightAnchor: 20, leadingAnchor: 18, topAnchor: 20)
+        Constraints.widthHeightLeadingTop(superView: self.scrollView!, view: button, widthAnchor: 19, heightAnchor: 19, leadingAnchor: 18, topAnchor: 20)
     }
     
     // MAIN IMAGE
@@ -111,7 +111,7 @@ class SignupViewController: UIViewController {
         
         let mainImage = UIButton()
         mainImage.layer.borderWidth = 1
-        mainImage.layer.cornerRadius = 24
+        mainImage.layer.cornerRadius = 12
         mainImage.clipsToBounds = true
         mainImage.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         mainImage.addTarget(self, action: #selector(openPickerController), for: .touchUpInside)
@@ -121,7 +121,7 @@ class SignupViewController: UIViewController {
         mainImage.widthAnchor.constraint(equalTo: superView.widthAnchor, constant: -40).isActive = true
         mainImage.heightAnchor.constraint(equalToConstant: 90).isActive = true
         mainImage.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20).isActive = true
-        mainImage.topAnchor.constraint(equalTo: superView.topAnchor, constant: 146).isActive = true
+        mainImage.topAnchor.constraint(equalTo: superView.topAnchor, constant: 52).isActive = true
         
         
         // IMAGE
@@ -156,11 +156,11 @@ class SignupViewController: UIViewController {
     // VERIFICATION
     func verification() {
        
-        self.interface?.nameTF?.rx.text.map { $0 ?? "" }.bind(to: signupVM!.nameText!).disposed(by: bag!)
-        self.interface?.surnameTF?.rx.text.map { $0 ?? "" }.bind(to: signupVM!.surnameText!).disposed(by: bag!)
+//        self.interface?.nameTF?.rx.text.map { $0 ?? "" }.bind(to: signupVM!.nameText!).disposed(by: bag!)
+//        self.interface?.surnameTF?.rx.text.map { $0 ?? "" }.bind(to: signupVM!.surnameText!).disposed(by: bag!)
         
-        signupVM?.notEmpty().bind(to: interface!.saveButton.rx.isEnabled).disposed(by: bag!)
-        signupVM?.notEmpty().map { $0 ? 1 : 0.4 }.bind(to: interface!.saveButton.rx.alpha).disposed(by: bag!)
+        signupVM?.notEmpty().bind(to: interface!.saveButton!.rx.isEnabled).disposed(by: bag!)
+        signupVM?.notEmpty().map { $0 ? 1 : 0.4 }.bind(to: interface!.saveButton!.rx.alpha).disposed(by: bag!)
         
     }
     
