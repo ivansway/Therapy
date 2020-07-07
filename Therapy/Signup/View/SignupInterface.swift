@@ -103,14 +103,11 @@ class SignupInterface {
         // SAVE BUTTON
         self.button = Button(button: saveButton!, superView: superView, top: 1200, title: "Save")
         
+        // ADD TO BUTTON TARGET
+        self.addToButtonTarget()
         
-        var index = 0
         
-        for button in deleteButtonArray {
-            button.addTarget(self, action: #selector(deleteParticipant(sender:)), for: .touchUpInside)
-            button.tag = index
-            index += 1
-        }
+        
         
     }
     
@@ -160,7 +157,7 @@ class SignupInterface {
         signupVM!.constructArray()
         
         // TAG
-        let tag = signupVM!.tag
+        let tag = participant.count
         
         self.participant.append(Participant(surnameTF: self.signupVM!.surnameTF[tag],
                                             nameTF: self.signupVM!.nameTF[tag],
@@ -177,16 +174,26 @@ class SignupInterface {
                                             back: self.signupVM!.participantBack[tag]))
         
         participantTop += 132
+        
+        // ADD TO BUTTONs TARGETs
+        self.addToButtonTarget()
 
     }
+    
+    
     
     
     // DELETE PARTICIPANT
     @objc private func deleteParticipant(sender: UIButton) {
         
-        self.participantBack[sender.tag].removeFromSuperview()
+        self.signupVM!.participantBack[sender.tag].removeFromSuperview()
         
         participant.remove(at: sender.tag)
+        self.signupVM!.deleteButtonArray.remove(at: sender.tag)
+        
+        print(sender.tag)
+        print(participant)
+        print(participant.count)
         
         
         for item in participant {
@@ -198,6 +205,8 @@ class SignupInterface {
     // FETCH PARTICIPANTS
     private func fetchParticipant() {
         
+        
+        
         // TAG
         let tag = signupVM!.tag
 
@@ -207,7 +216,7 @@ class SignupInterface {
             .subscribe(onNext: { member in
                 
                  // CONSTRUCT ARRAY
-                for _ in member { self.signupVM!.constructArray() }
+                self.signupVM!.constructArray()
                 
                 self.participant.append(Participant(surnameTF: self.signupVM!.surnameTF[tag],
                                                   nameTF: self.signupVM!.nameTF[tag],
@@ -225,6 +234,21 @@ class SignupInterface {
  
                 
             }).disposed(by: bag)
+        
+        // ADD TO BUTTONs TARGETs
+        self.addToButtonTarget()
+    }
+    
+    // ADD TO BUTTON TARGET
+    private func addToButtonTarget() {
+        for (index, button) in self.signupVM!.deleteButtonArray.enumerated() {
+            button.addTarget(self, action: #selector(deleteParticipant(sender:)), for: .touchUpInside)
+            if index >= 1 {
+                button.tag = index - 1
+            } else {
+                button.tag = index
+            }
+        }
     }
 }
 
