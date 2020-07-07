@@ -18,7 +18,7 @@ class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFiel
     private var picker: UIPickerView? = UIPickerView()
     private var pickedNumber = ""
     
-    init(superView: UIView, textField: UITextField, array: [String], top: CGFloat) {
+    public init(superView: UIView, textField: UITextField, array: [String], top: CGFloat) {
         self.superView = superView
         self.textField = textField
         self.array = array
@@ -54,9 +54,9 @@ class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFiel
         
         
         // ITEMS
-        let cancelButton: UIBarButtonItem? = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelAction))
+        let cancelButton: UIBarButtonItem? = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
         let flexSpace: UIBarButtonItem? = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton: UIBarButtonItem? = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker))
+        let doneButton: UIBarButtonItem? = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
         
         
         // DONE BUTTON COLOR
@@ -73,7 +73,7 @@ class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFiel
         textField.inputAccessoryView = toolbar
     }
 
-    // TF DELEGATE
+    // TF DELEGATEs
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -95,13 +95,13 @@ class Picker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFiel
     }
     
     // DONE
-    @objc private func donedatePicker() {
+    @objc private func done() {
         self.textField.text = self.pickedNumber
         self.superView.endEditing(true)
     }
     
     // CANCEL
-    @objc private func cancelAction() {
+    @objc private func cancel() {
         
         if self.pickedNumber == "" {
             self.textField.text = "Choose option"

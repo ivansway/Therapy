@@ -23,6 +23,7 @@
 		411BF6372494E6F50012B1DB /* TherapyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6362494E6F50012B1DB /* TherapyTests.swift */; };
 		411BF6422494E6F50012B1DB /* TherapyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF6412494E6F50012B1DB /* TherapyUITests.swift */; };
 		411BF6502494EA850012B1DB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BF64F2494EA850012B1DB /* SignupViewController.swift */; };
+		41322A8F24B208F6003131E7 /* ParticipantProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41322A8E24B208F6003131E7 /* ParticipantProtocol.swift */; };
 		413FB56E249D3E100081538D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB56D249D3E100081538D /* PhotoViewController.swift */; };
 		413FB570249D3EAF0081538D /* PhotoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB56F249D3EAF0081538D /* PhotoTransition.swift */; };
 		413FB572249D3FA90081538D /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FB571249D3FA90081538D /* LocationViewModel.swift */; };
@@ -44,7 +45,7 @@
 		4186267C249559EB00C85A40 /* GeneralInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186267B249559EB00C85A40 /* GeneralInterface.swift */; };
 		4186267E24955FA300C85A40 /* GeneralTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186267D24955FA300C85A40 /* GeneralTransition.swift */; };
 		418626802495617B00C85A40 /* LoginTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186267F2495617B00C85A40 /* LoginTransition.swift */; };
-		418626822496275900C85A40 /* RegistrationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418626812496275900C85A40 /* RegistrationTransition.swift */; };
+		418626822496275900C85A40 /* SignupTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418626812496275900C85A40 /* SignupTransition.swift */; };
 		41AC4A9C249948A200DDECE5 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC4A9B249948A200DDECE5 /* LocationsViewController.swift */; };
 		41AC4A9E24994A7300DDECE5 /* LocationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC4A9D24994A7300DDECE5 /* LocationInterface.swift */; };
 		41AC4AA024994F2300DDECE5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC4A9F24994F2300DDECE5 /* Place.swift */; };
@@ -105,6 +106,7 @@
 		411BF6412494E6F50012B1DB /* TherapyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyUITests.swift; sourceTree = "<group>"; };
 		411BF6432494E6F50012B1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		411BF64F2494EA850012B1DB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		41322A8E24B208F6003131E7 /* ParticipantProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantProtocol.swift; sourceTree = "<group>"; };
 		413FB56D249D3E100081538D /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		413FB56F249D3EAF0081538D /* PhotoTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTransition.swift; sourceTree = "<group>"; };
 		413FB571249D3FA90081538D /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
@@ -126,7 +128,7 @@
 		4186267B249559EB00C85A40 /* GeneralInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInterface.swift; sourceTree = "<group>"; };
 		4186267D24955FA300C85A40 /* GeneralTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTransition.swift; sourceTree = "<group>"; };
 		4186267F2495617B00C85A40 /* LoginTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTransition.swift; sourceTree = "<group>"; };
-		418626812496275900C85A40 /* RegistrationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTransition.swift; sourceTree = "<group>"; };
+		418626812496275900C85A40 /* SignupTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTransition.swift; sourceTree = "<group>"; };
 		41AC4A9B249948A200DDECE5 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		41AC4A9D24994A7300DDECE5 /* LocationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInterface.swift; sourceTree = "<group>"; };
 		41AC4A9F24994F2300DDECE5 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				41C6A559249BDE1600055C84 /* CheckBox.swift */,
 				410B535824A7B16000CCA88B /* StoryCell.swift */,
 				415FC89424AB815800A35CF2 /* Participant.swift */,
+				41322A8E24B208F6003131E7 /* ParticipantProtocol.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -228,7 +231,7 @@
 			children = (
 				411BF64F2494EA850012B1DB /* SignupViewController.swift */,
 				41FBFC022494FEAD0016F8E0 /* SignupInterface.swift */,
-				418626812496275900C85A40 /* RegistrationTransition.swift */,
+				418626812496275900C85A40 /* SignupTransition.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41322A8F24B208F6003131E7 /* ParticipantProtocol.swift in Sources */,
 				418626802495617B00C85A40 /* LoginTransition.swift in Sources */,
 				4186267C249559EB00C85A40 /* GeneralInterface.swift in Sources */,
 				41D51B66249638F40096D21D /* PresentationController.swift in Sources */,
@@ -835,7 +839,7 @@
 				4110975324AA3B2A00C9D702 /* PasswordTextField.swift in Sources */,
 				411BF6272494E6F30012B1DB /* Therapy.xcdatamodeld in Sources */,
 				413FB572249D3FA90081538D /* LocationViewModel.swift in Sources */,
-				418626822496275900C85A40 /* RegistrationTransition.swift in Sources */,
+				418626822496275900C85A40 /* SignupTransition.swift in Sources */,
 				41D51B68249685450096D21D /* DatePicker.swift in Sources */,
 				415FC89524AB815800A35CF2 /* Participant.swift in Sources */,
 				41F88E7A249A1A0600FEC000 /* Picker.swift in Sources */,

@@ -18,7 +18,7 @@ class CheckBox {
     private var indicator = true
     
     // INIT
-    init(superView: UIView, button: UIButton, top: CGFloat) {
+    public init(superView: UIView, button: UIButton, top: CGFloat) {
         self.checkBox = button
         self.top = top
         self.superView = superView

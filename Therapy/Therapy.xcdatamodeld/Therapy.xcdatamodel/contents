@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Child" representedClassName="Child" syncable="YES" codeGenerationType="class">
+        <attribute name="birthday" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="login" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <relationship name="participant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ParticipantDB" inverseName="owner" inverseEntity="ParticipantDB"/>
+    </entity>
     <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="String"/>
         <attribute name="electricity" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -16,8 +25,18 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="surname" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="ParticipantDB" representedClassName="ParticipantDB" syncable="YES" codeGenerationType="class">
+        <attribute name="birthday" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="participant" inverseEntity="Child"/>
+    </entity>
     <elements>
+        <element name="Location" positionX="-314.83984375" positionY="-13.83984375" width="128" height="163"/>
         <element name="Main" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="Location" positionX="-63" positionY="9" width="128" height="163"/>
+        <element name="ParticipantDB" positionX="-116.6640625" positionY="204.0703125" width="128" height="133"/>
+        <element name="Child" positionX="-287.05859375" positionY="213.7109375" width="128" height="148"/>
     </elements>
 </model>

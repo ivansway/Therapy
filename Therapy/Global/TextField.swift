@@ -30,11 +30,12 @@ class TextField {
         back?.layer.cornerRadius = 18
         back?.layer.borderWidth = 0.1
         back?.layer.borderColor = UIColor(red: 0.163, green: 0.209, blue: 0.137, alpha: 1).cgColor
-        Constraints.heightLeadingTrailingTop(superView: superView, view: back!, heightAnchor: 36, leadingAnchor: 20, trailingAnchor: -20, topAnchor: top)
+        Constraints.heightLeadingTrailingTop(superView: superView, view: back!, heightAnchor: 36, leadingAnchor: 0, trailingAnchor: -92, topAnchor: top)
         
         textField.placeholder = text
         textField.textAlignment = .left
         textField.font = UIFont(name: "Optima", size: 16)
         Constraints.heightLeadingTrailingTop(superView: back!, view: textField, heightAnchor: 36, leadingAnchor: 16, trailingAnchor: -16, topAnchor: 0)
+      
     }
 }

@@ -36,7 +36,13 @@ class SignupViewController: UIViewController {
     // VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.settings()
+        
     }
     
     // SETTINGS
@@ -71,6 +77,16 @@ class SignupViewController: UIViewController {
         
         // ADD PARTICIPANT BUTTON
         self.interface?.addParticipantB()
+        
+        
+        
+    }
+    
+    class func reloadSuperView() {
+        SignupViewController().updateViewConstraints()
+
+
+        print("tester")
         
     }
     

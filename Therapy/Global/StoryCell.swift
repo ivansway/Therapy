@@ -17,7 +17,7 @@ class StoryCell {
     private var superView: UIView
     private var top: CGFloat
     
-    init(scrollView: UIView, top: CGFloat, superView: UIView) {
+    public init(scrollView: UIView, top: CGFloat, superView: UIView) {
         self.scrollView = scrollView
         self.superView = superView
         self.top = top

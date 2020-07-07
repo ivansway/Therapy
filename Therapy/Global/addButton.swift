@@ -18,7 +18,7 @@ class AddButton {
     private var textColor: UIColor
     
     // INIT
-    init(superView: UIView, button: UIButton, top: CGFloat,
+    public init(superView: UIView, button: UIButton, top: CGFloat,
          text: String, backColor: UIColor, textColor: UIColor) {
         
         self.superView = superView
@@ -30,6 +30,7 @@ class AddButton {
         self.setup()
     }
     
+   
     // SETUP
     private func setup() {
         button.backgroundColor = backColor

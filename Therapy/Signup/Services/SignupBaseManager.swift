@@ -9,16 +9,25 @@
 import Foundation
 import CoreData
 import UIKit
-import RxSwift
-import RxCocoa
+
 
 class SignupBaseManager {
     
     // SIGN UP DB
-    var signupDB: [Main] = []
+    internal var signupDB: [Main] = []
+    internal var participant: [ParticipantDB] = []
     
     // APP DELEGATE
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    init() {
+        
+        // FETCH PARTICIPANT
+        fetchParticipant()
+        
+        // FETCH
+        fetch()
+    }
     
     // RESAVE
     func resave(identifier: String, name: String, surname: String, image: Data) {
@@ -70,18 +79,87 @@ class SignupBaseManager {
     // FETCH
     func fetch() {
 
-           let context = appDelegate.persistentContainer.viewContext
-           let fetchRequest: NSFetchRequest<Main> = Main.fetchRequest()
-           fetchRequest.predicate = NSPredicate(format: "identifier == %@", UserIdentity.identifier)
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Main> = Main.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "identifier == %@", UserIdentity.identifier)
 
-           do {
-               let request = try context.fetch(fetchRequest) as [Main]
+        do {
+            let request = try context.fetch(fetchRequest) as [Main]
 
 
-                self.signupDB = request
+            self.signupDB = request
 
-           } catch {
-               print(error.localizedDescription)
-           }
-       }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    // SAVE PARTICIPANT
+    public func resaveParticipant(name: String, surname: String, image: Data, birthday: String, identifier: String) {
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<ParticipantDB> = ParticipantDB.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "identifier == %@", identifier)
+        
+        do {
+            let request = try context.fetch(fetchRequest) as [ParticipantDB]
+            if request.count > 0 {
+                
+                request[0].image = image
+                request[0].name = name
+                request[0].surname = surname
+                request[0].birthday = birthday
+                
+                
+                
+            try context.save()
+            print("Resaved!")
+            
+            } else {
+                saveParticipant(identifier: identifier, name: name, surname: surname, image: image, birthday: birthday)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    // SAVE PARTICIPANT
+    func saveParticipant(identifier: String, name: String, surname: String, image: Data, birthday: String) {
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "ParticipantDB", in: context)
+        let participantDB = NSManagedObject(entity: entity!, insertInto: context) as! ParticipantDB
+        do {
+           
+            participantDB.identifier = identifier
+            participantDB.image = image
+            participantDB.name = name
+            participantDB.surname = surname
+            participantDB.birthday = birthday
+            
+            try context.save()
+            print("Saved!")
+                        
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    // FETCH
+    func fetchParticipant() {
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<ParticipantDB> = ParticipantDB.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "identifier == %@", UserIdentity.identifier)
+        
+        do {
+            let request = try context.fetch(fetchRequest) as [ParticipantDB]
+            
+            participant = request
+            
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
